@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaxoparkMobile.RegKlientPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+        <Grid>
+            <Image x:Name="image1" 
+                   Margin="0,20,0,0" 
+                   HorizontalOptions="Center"
+                   HeightRequest="175"/>
+            <ImageButton 
+                Margin="20,20,0,0"
+                x:Name="back" 
+                Clicked="back_Clicked" 
+                HeightRequest="40" 
+                BackgroundColor="White" 
+                HorizontalOptions="Start" 
+                VerticalOptions="Start"/>
+        </Grid>
+
+        <Label Text="Регистрация" FontSize="30" Margin="0,0,0,0"  HorizontalTextAlignment="Center" FontAttributes="Bold,Italic" TextColor="Black" />
+
+
+        <Label 
+            Text="Введите ваше ФИО" 
+            FontSize="20" 
+            Margin="0,20,0,0"  
+            HorizontalTextAlignment="Center"/>
+        <Entry  
+            x:Name="FIO" 
+            HorizontalTextAlignment="Center"
+            WidthRequest="350" 
+            HorizontalOptions="Center"
+            Margin="0,-5,0,0"/>
+
+        <Label 
+            Text="Ваш номер телефона" 
+            FontSize="20" 
+            Padding="30,0,30,0"  
+            HorizontalTextAlignment="Center"/>
+        <Entry 
+            x:Name="Phone" 
+            HorizontalTextAlignment="Center" 
+            WidthRequest="350" 
+            HorizontalOptions="Center"
+            Margin="0,-5,0,0"/>
+
+        <Grid WidthRequest="350" Padding="20,0,20,0" HeightRequest="70">
+            <Grid WidthRequest="160" HorizontalOptions="Start">
+                <Label Text="Пол" FontSize="20" Padding="30,0,30,0"  HorizontalTextAlignment="Center" VerticalOptions="Start"/>
+                <Entry x:Name="Gender" HorizontalTextAlignment="Center" WidthRequest="350" HorizontalOptions="Center" VerticalOptions="End"/>
+            </Grid>
+
+            <Grid WidthRequest="160" HorizontalOptions="End">
+                <Label Text="Возраст" FontSize="20" Padding="30,0,30,0"  HorizontalTextAlignment="Center" VerticalOptions="Start"/>
+                <Entry x:Name="Age" HorizontalTextAlignment="Center" WidthRequest="350" HorizontalOptions="Center" VerticalOptions="End"/>
+            </Grid>
+        </Grid>
+
+        <Label 
+            Text="Придумайте пароль" 
+            FontSize="20" 
+            Padding="30,0,30,0"  
+            HorizontalTextAlignment="Center"/>
+        <Entry 
+            x:Name="Password" 
+            HorizontalTextAlignment="Center" 
+            WidthRequest="350" 
+            HorizontalOptions="Center"
+            Margin="0,-5,0,0"/>
+
+        <Label 
+            Text="Повторите пароль" 
+            FontSize="20" 
+            Padding="30,0,30,0"  
+            HorizontalTextAlignment="Center"/>
+        <Entry 
+            x:Name="Password2" 
+            HorizontalTextAlignment="Center" 
+            WidthRequest="350" 
+            HorizontalOptions="Center"
+            Margin="0,-5,0,0"/>
+
+        <Button x:Name="button1"  
+                Text="Регистрация" FontSize="16" 
+                Background="yellow" 
+                Clicked="button1_Clicked" 
+                HorizontalOptions="Center" WidthRequest="250" 
+                Margin="0,20,0,0"
+                BorderWidth="2"
+                CornerRadius="15"
+                BorderColor="Orange"/>
+
+
+
+    </StackLayout>
+
+</ContentPage>

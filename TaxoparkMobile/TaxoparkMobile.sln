@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxoparkMobile.Android", "TaxoparkMobile\TaxoparkMobile.Android\TaxoparkMobile.Android.csproj", "{58A729D7-F6CB-457D-AFA3-B37BBCC1EF36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxoparkMobile", "TaxoparkMobile\TaxoparkMobile\TaxoparkMobile.csproj", "{7FE1EEDE-3567-4BA0-AB98-B80F38B215D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58A729D7-F6CB-457D-AFA3-B37BBCC1EF36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58A729D7-F6CB-457D-AFA3-B37BBCC1EF36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58A729D7-F6CB-457D-AFA3-B37BBCC1EF36}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{58A729D7-F6CB-457D-AFA3-B37BBCC1EF36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58A729D7-F6CB-457D-AFA3-B37BBCC1EF36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58A729D7-F6CB-457D-AFA3-B37BBCC1EF36}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7FE1EEDE-3567-4BA0-AB98-B80F38B215D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FE1EEDE-3567-4BA0-AB98-B80F38B215D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FE1EEDE-3567-4BA0-AB98-B80F38B215D4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7FE1EEDE-3567-4BA0-AB98-B80F38B215D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FE1EEDE-3567-4BA0-AB98-B80F38B215D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FE1EEDE-3567-4BA0-AB98-B80F38B215D4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B7A4FC7-D83E-4E45-B1F2-0DFDCF7CE1C6}
+	EndGlobalSection
+EndGlobal

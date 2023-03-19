@@ -1,0 +1,16 @@
+C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\bin\Debug\netstandard2.0\TaxoparkMobile.deps.json
+C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\bin\Debug\netstandard2.0\TaxoparkMobile.dll
+C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\bin\Debug\netstandard2.0\TaxoparkMobile.pdb
+C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\TaxoparkMobile.csproj.AssemblyReference.cache
+C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\TaxoparkMobile.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\TaxoparkMobile.AssemblyInfoInputs.cache
+C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\TaxoparkMobile.AssemblyInfo.cs
+C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\TaxoparkMobile.csproj.CoreCompileInputs.cache
+C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\TaxoparkMobile.dll
+C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\refint\TaxoparkMobile.dll
+C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\TaxoparkMobile.pdb
+C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\ref\TaxoparkMobile.dll
+C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\AvtorizKlientPage.xaml.g.cs
+C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\RegKlientPage.xaml.g.cs

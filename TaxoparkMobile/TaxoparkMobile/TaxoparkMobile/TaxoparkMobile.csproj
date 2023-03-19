@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="image\arrow.png" />
+    <None Remove="image\logo.png" />
+    <None Remove="image\reg.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="image\arrow.png" />
+    <EmbeddedResource Include="image\logo.png" />
+    <EmbeddedResource Include="image\reg.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="RegKlientPage.xaml.cs">
+      <DependentUpon>RegKlientPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="AvtorizKlientPage.xaml.cs">
+      <DependentUpon>AvtorizKlientPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>
