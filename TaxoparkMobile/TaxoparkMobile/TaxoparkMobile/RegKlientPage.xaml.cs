@@ -28,5 +28,10 @@ namespace TaxoparkMobile
         {
             await Navigation.PopAsync();
         }
+
+        void picker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

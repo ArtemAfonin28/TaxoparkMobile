@@ -11,6 +11,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="FlyoutPage1.xaml.cs" />
+    <Compile Remove="FlyoutPage1Detail.xaml.cs" />
+    <Compile Remove="FlyoutPage1Flyout.xaml.cs" />
+    <Compile Remove="FlyoutPage1FlyoutMenuItem.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="FlyoutPage1.xaml" />
+    <EmbeddedResource Remove="FlyoutPage1Detail.xaml" />
+    <EmbeddedResource Remove="FlyoutPage1Flyout.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="image\arrow.png" />
     <None Remove="image\logo.png" />
     <None Remove="image\reg.png" />
@@ -28,6 +41,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="AvtorizAdminPage.xaml.cs">
+      <DependentUpon>AvtorizAdminPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="RegKlientPage.xaml.cs">
       <DependentUpon>RegKlientPage.xaml</DependentUpon>
     </Compile>

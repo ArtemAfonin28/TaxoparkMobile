@@ -21,7 +21,7 @@
                 VerticalOptions="Start"/>
         </Grid>
 
-        <Label Text="Регистрация" FontSize="30" Margin="0,0,0,0"  HorizontalTextAlignment="Center" FontAttributes="Bold,Italic" TextColor="Black" />
+        <Label Text="Регистрация" FontSize="30" Margin="0,0,0,0"  HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" />
 
 
         <Label 
@@ -50,12 +50,18 @@
 
         <Grid WidthRequest="350" Padding="20,0,20,0" HeightRequest="70">
             <Grid WidthRequest="160" HorizontalOptions="Start">
-                <Label Text="Пол" FontSize="20" Padding="30,0,30,0"  HorizontalTextAlignment="Center" VerticalOptions="Start"/>
-                <Entry x:Name="Gender" HorizontalTextAlignment="Center" WidthRequest="350" HorizontalOptions="Center" VerticalOptions="End"/>
+                <Label Text="Пол" FontSize="20" Padding="30,5,30,0"  HorizontalTextAlignment="Center" VerticalOptions="Start"/>
+                <!--<Entry x:Name="Gender" HorizontalTextAlignment="Center" WidthRequest="350" HorizontalOptions="Center" VerticalOptions="End"/> -->
+                <Picker x:Name="picker_gender" SelectedIndexChanged="picker_SelectedIndexChanged" HorizontalTextAlignment="Center" WidthRequest="350" HorizontalOptions="Center" VerticalOptions="End">
+                    <Picker.Items>
+                        <x:String>Мужской</x:String>
+                        <x:String>Женский</x:String>
+                    </Picker.Items>
+                </Picker>
             </Grid>
 
             <Grid WidthRequest="160" HorizontalOptions="End">
-                <Label Text="Возраст" FontSize="20" Padding="30,0,30,0"  HorizontalTextAlignment="Center" VerticalOptions="Start"/>
+                <Label Text="Возраст" FontSize="20" Padding="30,5,30,0"  HorizontalTextAlignment="Center" VerticalOptions="Start"/>
                 <Entry x:Name="Age" HorizontalTextAlignment="Center" WidthRequest="350" HorizontalOptions="Center" VerticalOptions="End"/>
             </Grid>
         </Grid>

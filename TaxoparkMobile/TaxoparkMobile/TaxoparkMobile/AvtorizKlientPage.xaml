@@ -12,7 +12,7 @@
                HeightRequest="175"/>
 
 
-        <Label Text="Авторизация" FontSize="30" Margin="0,0,0,0"  HorizontalTextAlignment="Center" FontAttributes="Bold,Italic" TextColor="Black" />
+        <Label Text="Авторизация" FontSize="30" Margin="0,0,0,0"  HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" />
 
 
         <Label Text="Введите ваш номер телефона" FontSize="20" Margin="0,20,0,0"  HorizontalTextAlignment="Center"/>
@@ -24,7 +24,6 @@
         <Button x:Name="button1"  
                 Text="Войти" FontSize="16" 
                 Background="yellow" 
-                Clicked="button1_Clicked" 
                 HorizontalOptions="Center" WidthRequest="250" 
                 Margin="0,15,0,0"
                 BorderWidth="2"
@@ -32,8 +31,17 @@
                 BorderColor="Orange"/>
 
 
-        <Label Text="Нет аккаунта? Создайте его!" FontSize="22" HorizontalTextAlignment="Center" Margin="0,40,0,0" TextColor="Black"/>
-        <ImageButton x:Name="imagebutton" HeightRequest="100" BackgroundColor="White"/>
+        <Label Text="Нет аккаунта? Создайте его!" FontSize="22" HorizontalTextAlignment="Center" Margin="0,40,0,0" TextColor="Black" />
+        <ImageButton x:Name="imagebutton" HeightRequest="100" BackgroundColor="White" Clicked="OpenReg_Clicked"/>
+
+        <Button x:Name="adminButton"  
+                Text="Для администраторов" FontSize="16" 
+                Background="transparent"
+                HorizontalOptions="Center" WidthRequest="250" 
+                Margin="0,20,0,0"
+                BorderColor="transparent"
+                Clicked="adminButton_Clicked"
+                FontAttributes="Bold"/>
     </StackLayout>
 
 </ContentPage>

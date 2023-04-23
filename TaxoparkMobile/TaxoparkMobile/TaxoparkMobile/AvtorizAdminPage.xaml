@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaxoparkMobile.AvtorizAdmintPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+        <Grid>
+            <Image x:Name="image1" 
+                   Margin="0,20,0,0" 
+                   HorizontalOptions="Center"
+                   HeightRequest="175"/>
+            <ImageButton 
+                Margin="20,20,0,0"
+                x:Name="back" 
+                Clicked="back_Clicked" 
+                HeightRequest="40" 
+                BackgroundColor="White" 
+                HorizontalOptions="Start" 
+                VerticalOptions="Start"/>
+        </Grid>
+
+
+        <Label Text="Авторизация администраторов" FontSize="30" Margin="0,0,0,0"  HorizontalTextAlignment="Center" FontAttributes="Bold,Italic" TextColor="Black" />
+
+
+        <Label Text="Введите ваш номер телефона" FontSize="20" Margin="0,60,0,0"  HorizontalTextAlignment="Center"/>
+        <Entry  x:Name="nameInput1" HorizontalTextAlignment="Center" WidthRequest="350" HorizontalOptions="Center"/>
+
+        <Label Text="Введите пароль" FontSize="20" Padding="30,0,30,0"  HorizontalTextAlignment="Center"/>
+        <Entry x:Name="nameInput2" HorizontalTextAlignment="Center" WidthRequest="350" HorizontalOptions="Center"/>
+
+        <Button x:Name="button1"  
+                Text="Войти" FontSize="16" 
+                Background="yellow" 
+                HorizontalOptions="Center" WidthRequest="250" 
+                Margin="0,25,0,0"
+                BorderWidth="2"
+                CornerRadius="15"
+                BorderColor="Orange"/>
+
+
+    </StackLayout>
+
+</ContentPage>
