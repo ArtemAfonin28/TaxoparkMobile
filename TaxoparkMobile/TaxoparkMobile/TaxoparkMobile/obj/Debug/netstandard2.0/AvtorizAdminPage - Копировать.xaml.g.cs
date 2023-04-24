@@ -8,22 +8,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("TaxoparkMobile.AvtorizKlientPage.xaml", "AvtorizKlientPage.xaml", typeof(global::TaxoparkMobile.AvtorizKlientPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("TaxoparkMobile.AvtorizAdminPage - Копировать.xaml", "AvtorizAdminPage - Копировать.xaml", typeof(global::TaxoparkMobile.AvtorizAdmintPage))]
 
 namespace TaxoparkMobile {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("AvtorizKlientPage.xaml")]
-    public partial class AvtorizKlientPage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("AvtorizAdminPage - Копировать.xaml")]
+    public partial class AvtorizAdmintPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Image image1;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.ImageButton buttonVodAvtoriz;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.ImageButton buttonAdminAvtoriz;
+        private global::Xamarin.Forms.ImageButton back;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Entry nameInput1;
@@ -35,22 +32,13 @@ namespace TaxoparkMobile {
         private global::Xamarin.Forms.Button button1;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.ImageButton imagebutton;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Button adminButton;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(AvtorizKlientPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(AvtorizAdmintPage));
             image1 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "image1");
-            buttonVodAvtoriz = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "buttonVodAvtoriz");
-            buttonAdminAvtoriz = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "buttonAdminAvtoriz");
+            back = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "back");
             nameInput1 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "nameInput1");
             nameInput2 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "nameInput2");
             button1 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "button1");
-            imagebutton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "imagebutton");
-            adminButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "adminButton");
         }
     }
 }

@@ -16,6 +16,8 @@ namespace TaxoparkMobile
 
             image1.Source = ImageSource.FromResource("TaxoparkMobile.image.logo.png");
             imagebutton.Source = ImageSource.FromResource("TaxoparkMobile.image.reg.png");
+            buttonVodAvtoriz.Source = ImageSource.FromResource("TaxoparkMobile.image.voditelLogo.png");
+            buttonAdminAvtoriz.Source = ImageSource.FromResource("TaxoparkMobile.image.adminLogo.png");
 
         }
 
@@ -23,9 +25,13 @@ namespace TaxoparkMobile
         {
             await Navigation.PushAsync(new RegKlientPage());
         }
-        private async void adminButton_Clicked(object sender, EventArgs e)
+        private async void AdminButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AvtorizAdmintPage());
+        }
+        private async void VoditelButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AvtorizVoditelPage());
         }
     }
 }

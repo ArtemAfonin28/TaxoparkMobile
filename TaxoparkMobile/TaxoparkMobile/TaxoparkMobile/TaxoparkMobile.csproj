@@ -24,15 +24,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="image\adminLogo.png" />
     <None Remove="image\arrow.png" />
     <None Remove="image\logo.png" />
     <None Remove="image\reg.png" />
+    <None Remove="image\voditelLogo.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="image\adminLogo.png" />
     <EmbeddedResource Include="image\arrow.png" />
     <EmbeddedResource Include="image\logo.png" />
     <EmbeddedResource Include="image\reg.png" />
+    <EmbeddedResource Include="image\voditelLogo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,6 +45,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="AvtorizVoditelPage.xaml.cs">
+      <DependentUpon>AvtorizVoditelPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="AvtorizAdminPage.xaml.cs">
       <DependentUpon>AvtorizAdminPage.xaml</DependentUpon>
     </Compile>
