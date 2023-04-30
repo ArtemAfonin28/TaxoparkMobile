@@ -49,17 +49,16 @@
                 BorderColor="Orange"/>
 
 
-        <Label Text="Нет аккаунта? Создайте его!" FontSize="22" HorizontalTextAlignment="Center" Margin="0,40,0,0" TextColor="Black" />
-        <ImageButton x:Name="imagebutton" HeightRequest="100" BackgroundColor="White" Clicked="OpenReg_Clicked"/>
-
         <Button x:Name="adminButton"  
-                Text="Для администраторов" FontSize="16" 
+                Text="Нет аккаунта? Создайте его!" FontSize="16" 
                 Background="transparent"
-                HorizontalOptions="Center" WidthRequest="250" 
-                Margin="0,20,0,0"
+                HorizontalOptions="Center" WidthRequest="300" HeightRequest="45"
+                Margin="0,60,0,0"
                 BorderColor="transparent"
                 Clicked="AdminButton_Clicked"
                 FontAttributes="Bold"/>
+        <ImageButton x:Name="imagebutton" HeightRequest="100" BackgroundColor="White" Clicked="OpenReg_Clicked"/>
+
     </StackLayout>
 
 </ContentPage>
