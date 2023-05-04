@@ -33,5 +33,9 @@ namespace TaxoparkMobile
         {
             await Navigation.PushAsync(new AvtorizVoditelPage());
         }
+        private async void AvtorizButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ZakazKlientPage());
+        }
     }
 }

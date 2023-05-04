@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaxoparkMobile.ZakazKlientPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+
+        <Grid>
+            <ImageButton 
+                Margin="10,5,0,0"
+                x:Name="back" 
+                HeightRequest="60" 
+                WidthRequest="60"
+                BorderColor="blue"
+                BackgroundColor="Gray"
+                BorderWidth="3"
+                HorizontalOptions="Start" 
+                VerticalOptions="Center"
+                CornerRadius="30"
+            />
+            <Label 
+                x:Name="KlientName"  TextColor="Black"
+                Text="Афонин Артем Викторович" FontSize="20" 
+                HorizontalOptions="Start" VerticalOptions="Center" 
+                Margin="80,0,0,0"
+            />
+        </Grid>
+        <Label
+            BackgroundColor="Black"
+            Margin="0,-5,0,0"
+            HeightRequest="2"
+        />
+        <Label Text="Напишите место начала поездки и место её окончания" FontSize="20" 
+            Margin="0,40,0,0"
+            TextColor="Black"
+            HorizontalOptions="Center" 
+            HorizontalTextAlignment="Center"
+            WidthRequest="300"
+        />
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Entry 
+                   Grid.Column="0" 
+                   Grid.Row="0" 
+                   VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                   FontSize="20" TextColor="Black" Placeholder="Откуда"
+                   WidthRequest="350" Margin="0,20,0,0"
+            />
+            <Entry
+                   Grid.Column="0" 
+                   Grid.Row="1" 
+                   VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                   FontSize="20" TextColor="Black" Placeholder="Куда"
+                   WidthRequest="350" Margin="0,20,0,0" 
+            />
+        </Grid>
+
+
+
+    </StackLayout>
+
+</ContentPage>

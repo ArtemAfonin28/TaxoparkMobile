@@ -51,11 +51,22 @@
     <Compile Update="AvtorizAdminPage.xaml.cs">
       <DependentUpon>AvtorizAdminPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="ZakazKlientPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>ZakazKlientPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="RegKlientPage.xaml.cs">
       <DependentUpon>RegKlientPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="AvtorizKlientPage.xaml.cs">
       <DependentUpon>AvtorizKlientPage.xaml</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="ZakazKlientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

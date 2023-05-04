@@ -16,3 +16,4 @@ C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\Taxopark
 C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\RegKlientPage.xaml.g.cs
 C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\AvtorizAdminPage.xaml.g.cs
 C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\AvtorizVoditelPage.xaml.g.cs
+C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\ZakazKlientPage.xaml.g.cs
