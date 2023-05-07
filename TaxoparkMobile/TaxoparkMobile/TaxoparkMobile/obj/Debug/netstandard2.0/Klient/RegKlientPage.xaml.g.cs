@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("TaxoparkMobile.RegKlientPage.xaml", "RegKlientPage.xaml", typeof(global::TaxoparkMobile.RegKlientPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("TaxoparkMobile.Klient.RegKlientPage.xaml", "Klient/RegKlientPage.xaml", typeof(global::TaxoparkMobile.RegKlientPage))]
 
 namespace TaxoparkMobile {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("RegKlientPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Klient\\RegKlientPage.xaml")]
     public partial class RegKlientPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

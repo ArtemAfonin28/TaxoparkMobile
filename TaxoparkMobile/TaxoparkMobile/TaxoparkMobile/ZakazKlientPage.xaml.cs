@@ -15,6 +15,7 @@ namespace TaxoparkMobile
         {
             InitializeComponent();
 
+            icon.Source = ImageSource.FromResource("TaxoparkMobile.image.iconTaxi.png");
         }
 
 

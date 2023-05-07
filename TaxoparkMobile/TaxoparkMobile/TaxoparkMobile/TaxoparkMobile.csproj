@@ -26,6 +26,7 @@
   <ItemGroup>
     <None Remove="image\adminLogo.png" />
     <None Remove="image\arrow.png" />
+    <None Remove="image\iconTaxi.png" />
     <None Remove="image\logo.png" />
     <None Remove="image\reg.png" />
     <None Remove="image\voditelLogo.png" />
@@ -34,6 +35,7 @@
   <ItemGroup>
     <EmbeddedResource Include="image\adminLogo.png" />
     <EmbeddedResource Include="image\arrow.png" />
+    <EmbeddedResource Include="image\iconTaxi.png" />
     <EmbeddedResource Include="image\logo.png" />
     <EmbeddedResource Include="image\reg.png" />
     <EmbeddedResource Include="image\voditelLogo.png" />
@@ -55,7 +57,7 @@
       <SubType>Code</SubType>
       <DependentUpon>ZakazKlientPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="RegKlientPage.xaml.cs">
+    <Compile Update="Klient\RegKlientPage.xaml.cs">
       <DependentUpon>RegKlientPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="AvtorizKlientPage.xaml.cs">
@@ -68,5 +70,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Voditel\" />
+    <Folder Include="Admin\" />
   </ItemGroup>
 </Project>

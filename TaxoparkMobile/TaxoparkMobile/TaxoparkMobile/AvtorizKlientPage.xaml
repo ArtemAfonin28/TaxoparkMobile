@@ -56,7 +56,7 @@
                 HorizontalOptions="Center" WidthRequest="300" HeightRequest="45"
                 Margin="0,60,0,0"
                 BorderColor="transparent"
-                Clicked="AdminButton_Clicked"
+                Clicked="OpenReg_Clicked"
                 FontAttributes="Bold"/>
         <ImageButton x:Name="imagebutton" HeightRequest="100" BackgroundColor="White" Clicked="OpenReg_Clicked"/>
 

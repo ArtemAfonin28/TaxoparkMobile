@@ -13,7 +13,7 @@ C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\Taxopark
 C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\TaxoparkMobile.pdb
 C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\ref\TaxoparkMobile.dll
 C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\AvtorizKlientPage.xaml.g.cs
-C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\RegKlientPage.xaml.g.cs
 C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\AvtorizAdminPage.xaml.g.cs
 C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\AvtorizVoditelPage.xaml.g.cs
 C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\ZakazKlientPage.xaml.g.cs
+C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\Klient\RegKlientPage.xaml.g.cs
