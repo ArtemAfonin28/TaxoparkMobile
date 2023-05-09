@@ -42,38 +42,37 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MySqlConnector" Version="2.2.6" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="AvtorizVoditelPage.xaml.cs">
+    <Compile Update="Klient\TrackingPage.xaml.cs">
+      <DependentUpon>TrackingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Voditel\AvtorizVoditelPage.xaml.cs">
       <DependentUpon>AvtorizVoditelPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="AvtorizAdminPage.xaml.cs">
+    <Compile Update="Admin\AvtorizAdminPage.xaml.cs">
       <DependentUpon>AvtorizAdminPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="ZakazKlientPage.xaml.cs">
+    <Compile Update="Klient\ZakazKlientPage.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>ZakazKlientPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Klient\RegKlientPage.xaml.cs">
       <DependentUpon>RegKlientPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="AvtorizKlientPage.xaml.cs">
+    <Compile Update="Klient\AvtorizKlientPage.xaml.cs">
       <DependentUpon>AvtorizKlientPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="ZakazKlientPage.xaml">
+    <EmbeddedResource Update="Klient\ZakazKlientPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Voditel\" />
-    <Folder Include="Admin\" />
   </ItemGroup>
 </Project>

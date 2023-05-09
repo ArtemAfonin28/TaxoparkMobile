@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaxoparkMobile.TrackingPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+        <Grid>
+            <ImageButton 
+                Margin="10,5,0,0"
+                x:Name="back" 
+                HeightRequest="60" 
+                WidthRequest="60"
+                BorderColor="blue"
+                BackgroundColor="Gray"
+                BorderWidth="3"
+                HorizontalOptions="Start" 
+                VerticalOptions="Center"
+                CornerRadius="30"
+            />
+            <Label 
+                x:Name="KlientName"  TextColor="Black"
+                Text="Афонин Артем Викторович" FontSize="20" 
+                HorizontalOptions="Start" VerticalOptions="Center" 
+                Margin="80,0,0,0"
+            />
+        </Grid>
+        <BoxView
+            BackgroundColor="Black"
+            Margin="0,-5,0,0"
+            HeightRequest="2"
+        />
+        <Label
+            Text="Информация о вашем заказе"
+            HorizontalTextAlignment="Center" FontSize="20" TextColor="Black"
+            Margin="0,30,0,0"
+        />
+
+        <Grid Margin="5,30,5,0" BackgroundColor="Orange" RowSpacing="4" ColumnSpacing="4" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label 
+                Grid.Column="0" Grid.Row="0" Text="За вами приедет:" FontSize="20" TextColor="Black" BackgroundColor="White"
+            />
+            <Label 
+                Grid.Column="1" Grid.Row="0" Text="Неизвестно" BackgroundColor="White"
+                FontSize="16" TextColor="Black" VerticalTextAlignment="Center"
+            />
+            
+            <Label 
+                Grid.Column="0" Grid.Row="1" Text="На автомобиле:" FontSize="20" TextColor="Black" BackgroundColor="White"
+            />
+            <Label 
+                Grid.Column="1" Grid.Row="1" Text="Неизвестно" BackgroundColor="White"
+                FontSize="16" TextColor="Black" VerticalTextAlignment="Center"
+            />
+
+            <Label 
+                Grid.Column="0" Grid.Row="2" Text="Номер авто:" FontSize="20" TextColor="Black" BackgroundColor="White"
+            />
+            <Label 
+                Grid.Column="1" Grid.Row="2" Text="Неизвестно" BackgroundColor="White"
+                FontSize="16" TextColor="Black" VerticalTextAlignment="Center"
+            />
+
+            <Label 
+                Grid.Column="0" Grid.Row="3" Text="Откуда:" FontSize="20" TextColor="Black" BackgroundColor="White"
+            />
+            <Label 
+                Grid.Column="1" Grid.Row="3" Text="Неизвестно" BackgroundColor="White"
+                FontSize="16" TextColor="Black" VerticalTextAlignment="Center"
+            />
+
+            <Label 
+                Grid.Column="0" Grid.Row="4" Text="Куда:" FontSize="20" TextColor="Black" BackgroundColor="White"
+            />
+            <Label 
+                Grid.Column="1" Grid.Row="4" Text="Неизвестно" BackgroundColor="White"
+                FontSize="16" TextColor="Black" VerticalTextAlignment="Center"
+            />
+        </Grid>
+        <Label
+            Text="Водитель в пути, или нет"
+            HorizontalTextAlignment="Center" FontSize="20" TextColor="Black"
+            Margin="0,30,0,0"
+            />
+    </StackLayout>
+
+</ContentPage>
