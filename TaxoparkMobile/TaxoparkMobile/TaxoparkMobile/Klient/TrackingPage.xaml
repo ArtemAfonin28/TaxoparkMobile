@@ -37,7 +37,7 @@
             Margin="0,30,0,0"
         />
 
-        <Grid Margin="5,30,5,0" BackgroundColor="Orange" RowSpacing="4" ColumnSpacing="4" >
+        <Grid Margin="5,30,5,0" BackgroundColor="Orange" RowSpacing="4" ColumnSpacing="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>

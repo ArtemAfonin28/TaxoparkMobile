@@ -11,11 +11,11 @@ namespace TaxoparkMobile
 {
     public partial class ZakazKlientPage : ContentPage
     {
-        public ZakazKlientPage()
+        public ZakazKlientPage(List<string> userData2)
         {
             InitializeComponent();
-
             icon.Source = ImageSource.FromResource("TaxoparkMobile.image.iconTaxi.png");
+            KlientName.Text = userData2[1];
         }
         private async void Tracking_Clicked(object sender, EventArgs e)
         {

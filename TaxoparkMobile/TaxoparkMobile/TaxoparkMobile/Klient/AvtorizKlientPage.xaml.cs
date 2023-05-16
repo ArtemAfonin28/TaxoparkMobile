@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -13,6 +14,8 @@ namespace TaxoparkMobile
 {
     public partial class AvtorizKlientPage : ContentPage
     {
+
+        List<string> userData = new List<string>();
         public AvtorizKlientPage()
         {
 
@@ -42,21 +45,43 @@ namespace TaxoparkMobile
         {
             string phoneUser = nameInput1.Text;
             string passwordUser = nameInput2.Text;
-            
-            DB db = new DB();
-            db.openConnection();
-            DataTable table = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `klient` WHERE `Phone_Klient`=@phoneUser AND `Password_Klient`=@passwordUser");
-            command.Parameters.Add("@phoneUser", MySqlDbType.VarChar).Value = phoneUser;
-            command.Parameters.Add("@passwordUser", MySqlDbType.VarChar).Value = passwordUser;
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-            db.closeConnection();
-            if (table.Rows.Count > 0)
+            if (phoneUser == "" || passwordUser == "")
             {
-                await Navigation.PushAsync(new ZakazKlientPage());
+                await DisplayAlert("Ошибка", "Заполните все поля", "OK");
             }
+            else
+            {
+                DB db = new DB();
+                db.openConnection();
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `client` WHERE `Phone_Client`=@phoneUser AND `Password_Client`=@passwordUser", db.getConnection());
+                command.Parameters.Add("@phoneUser", MySqlDbType.VarChar).Value = phoneUser;
+                command.Parameters.Add("@passwordUser", MySqlDbType.VarChar).Value = GetHashMD5(passwordUser);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        userData.Add(reader[0].ToString());
+                        userData.Add(reader[1].ToString());
+                        userData.Add(reader[2].ToString());
+                    }
+                    await Navigation.PushAsync(new ZakazKlientPage(userData));
+                }
+                else
+                {
+                    await DisplayAlert("Ошибка", "Не верные данные", "OK");
+                }
+                db.closeConnection();
+            }
+
+        }
+        public string GetHashMD5(string input)
+        {
+            var md5 = MD5.Create();
+            var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
+
+            return Convert.ToBase64String(hash);
         }
     }
 }

@@ -32,6 +32,7 @@
         <Entry x:Name="nameInput2" HorizontalTextAlignment="Center" WidthRequest="350" HorizontalOptions="Center"/>
 
         <Button x:Name="button1"  
+                Clicked="vhod_Clicked"
                 Text="Войти" FontSize="16" 
                 Background="yellow" 
                 HorizontalOptions="Center" WidthRequest="250" 
