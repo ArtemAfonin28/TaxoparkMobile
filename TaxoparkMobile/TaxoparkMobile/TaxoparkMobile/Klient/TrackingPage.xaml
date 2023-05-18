@@ -50,50 +50,66 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Label 
-                Grid.Column="0" Grid.Row="0" Text="За вами приедет:" FontSize="20" TextColor="Black" BackgroundColor="White"
+                Grid.Column="0" Grid.Row="0" Text="Откуда:" FontSize="20" TextColor="Black" BackgroundColor="White"
             />
             <Label 
+                x:Name="Label1"
                 Grid.Column="1" Grid.Row="0" Text="Неизвестно" BackgroundColor="White"
                 FontSize="16" TextColor="Black" VerticalTextAlignment="Center"
             />
             
             <Label 
-                Grid.Column="0" Grid.Row="1" Text="На автомобиле:" FontSize="20" TextColor="Black" BackgroundColor="White"
+                Grid.Column="0" Grid.Row="1" Text="Куда:" FontSize="20" TextColor="Black" BackgroundColor="White"
             />
             <Label 
+                x:Name="Label2"
                 Grid.Column="1" Grid.Row="1" Text="Неизвестно" BackgroundColor="White"
                 FontSize="16" TextColor="Black" VerticalTextAlignment="Center"
             />
 
             <Label 
-                Grid.Column="0" Grid.Row="2" Text="Номер авто:" FontSize="20" TextColor="Black" BackgroundColor="White"
+                Grid.Column="0" Grid.Row="2" Text="За вами приедет" FontSize="20" TextColor="Black" BackgroundColor="White"
             />
             <Label 
+                x:Name="Label3"
                 Grid.Column="1" Grid.Row="2" Text="Неизвестно" BackgroundColor="White"
                 FontSize="16" TextColor="Black" VerticalTextAlignment="Center"
             />
 
             <Label 
-                Grid.Column="0" Grid.Row="3" Text="Откуда:" FontSize="20" TextColor="Black" BackgroundColor="White"
+                Grid.Column="0" Grid.Row="3" Text="На автомобиле:" FontSize="20" TextColor="Black" BackgroundColor="White"
             />
             <Label 
+                x:Name="Label4"
                 Grid.Column="1" Grid.Row="3" Text="Неизвестно" BackgroundColor="White"
                 FontSize="16" TextColor="Black" VerticalTextAlignment="Center"
             />
 
             <Label 
-                Grid.Column="0" Grid.Row="4" Text="Куда:" FontSize="20" TextColor="Black" BackgroundColor="White"
+                Grid.Column="0" Grid.Row="4" Text="Номер авто:" FontSize="20" TextColor="Black" BackgroundColor="White"
             />
             <Label 
+                x:Name="Label5"
                 Grid.Column="1" Grid.Row="4" Text="Неизвестно" BackgroundColor="White"
                 FontSize="16" TextColor="Black" VerticalTextAlignment="Center"
             />
         </Grid>
-        <Label
+        <Label x:Name="stateCall"
             Text="Водитель в пути, или нет"
             HorizontalTextAlignment="Center" FontSize="20" TextColor="Black"
             Margin="0,30,0,0"
             />
+        
+        
+        <Button x:Name="button1"  
+                Text="Заказать такси" FontSize="16" 
+                Clicked="Tracking_Clicked"
+                Background="yellow" 
+                HorizontalOptions="Center" WidthRequest="250" 
+                Margin="0,20,0,0"
+                BorderWidth="3"
+                CornerRadius="15"
+                BorderColor="Orange"/>
     </StackLayout>
 
 </ContentPage>

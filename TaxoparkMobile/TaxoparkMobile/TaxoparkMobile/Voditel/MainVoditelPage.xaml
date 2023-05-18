@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaxoparkMobile.MainVoditelPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+        <Grid>
+            <ImageButton 
+                Margin="10,5,0,0"
+                x:Name="back" 
+                HeightRequest="60" 
+                WidthRequest="60"
+                BorderColor="blue"
+                BackgroundColor="Gray"
+                BorderWidth="3"
+                HorizontalOptions="Start" 
+                VerticalOptions="Center"
+                CornerRadius="30"
+            />
+            <Label 
+                x:Name="VoditelName"  TextColor="Black"
+                Text="Афонин Артем Викторович" FontSize="20" 
+                HorizontalOptions ="Center"  VerticalOptions="Center" 
+                Margin="80,0,0,0"
+            />
+        </Grid>
+        <BoxView
+            BackgroundColor="Black"
+            Margin="0,-5,0,0"
+            HeightRequest="2"
+        />
+        <Label 
+                TextColor="Black"
+                Text="Доступные заказы" FontSize="20" 
+                HorizontalOptions="Center" VerticalOptions="Center" 
+                Margin="0,10,0,10"
+        />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" 
+                TextColor="Black" Text="Id заказа" FontSize="16" 
+                HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                Margin="0,10,0,0"
+            />
+            <Label Grid.Column="1" Grid.Row="0" 
+                TextColor="Black" Text="Время заказа" FontSize="16" 
+                HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                Margin="0,10,0,0"
+            />
+            <Label Grid.Column="2" Grid.Row="0" 
+                TextColor="Black" Text="Откуда" FontSize="16" 
+                HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                Margin="0,10,0,0"
+            />
+            <Label Grid.Column="3" Grid.Row="0" 
+                TextColor="Black" Text="Куда" FontSize="16" 
+                HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                Margin="0,10,0,0"
+            />
+            <Label Grid.Column="4" Grid.Row="0" 
+                TextColor="Black" Text="Доп. услуга" FontSize="16" 
+                HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                Margin="0,10,0,0"
+            />
+        </Grid>
+        <BoxView
+            BackgroundColor="DarkOrange"
+            Margin="0,0,0,0"
+            HeightRequest="2"
+        />
+        <ScrollView HeightRequest="300" Background="lightgray">
+            <StackLayout x:Name="callView">
+                
+            </StackLayout>
+        </ScrollView>
+
+
+
+    </StackLayout>
+
+</ContentPage>

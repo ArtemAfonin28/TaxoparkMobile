@@ -11,6 +11,7 @@ namespace TaxoparkMobile
 {
     public partial class AvtorizVoditelPage : ContentPage
     {
+        List<string> voditelData = new List<string>();
         public AvtorizVoditelPage()
         {
             InitializeComponent();
@@ -37,7 +38,14 @@ namespace TaxoparkMobile
 
             if (reader.HasRows)
             {
-                await DisplayAlert("Ништяк", "Реально ништяк", "OK");
+                while (reader.Read())
+                {
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        voditelData.Add(reader[i].ToString());
+                    }
+                }
+                await Navigation.PushAsync(new MainVoditelPage(voditelData));
             }
             else
             {

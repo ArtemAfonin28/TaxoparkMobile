@@ -51,6 +51,9 @@
     <Compile Update="Klient\TrackingPage.xaml.cs">
       <DependentUpon>TrackingPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Voditel\MainVoditelPage.xaml.cs">
+      <DependentUpon>MainVoditelPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Voditel\AvtorizVoditelPage.xaml.cs">
       <DependentUpon>AvtorizVoditelPage.xaml</DependentUpon>
     </Compile>
