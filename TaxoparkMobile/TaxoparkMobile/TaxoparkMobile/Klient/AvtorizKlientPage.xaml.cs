@@ -57,7 +57,7 @@ namespace TaxoparkMobile
                 command.Parameters.Add("@phoneUser", MySqlDbType.VarChar).Value = phoneUser;
                 command.Parameters.Add("@passwordUser", MySqlDbType.VarChar).Value = GetHashMD5(passwordUser);
                 MySqlDataReader reader = command.ExecuteReader();
-
+                userData.Clear();
                 if (reader.HasRows)
                 {
                     while (reader.Read())

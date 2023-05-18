@@ -25,33 +25,41 @@ namespace TaxoparkMobile
         }
         private async void vhod_Clicked(object sender, EventArgs e)
         {
+            
             string phoneDriver = nameInput1.Text;
             string passwordDriver = nameInput2.Text;
-
-            DB db = new DB();
-            db.openConnection();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `driver` WHERE `Phone_Driver`=@phoneDriver AND `Password_Driver`=@passwordDriver", db.getConnection());
-            command.Parameters.Add("@phoneDriver", MySqlDbType.VarChar).Value = phoneDriver;
-            command.Parameters.Add("@passwordDriver", MySqlDbType.VarChar).Value = passwordDriver;
-
-            MySqlDataReader reader = command.ExecuteReader();
-
-            if (reader.HasRows)
+            if (phoneDriver == "" || passwordDriver == "")
             {
-                while (reader.Read())
-                {
-                    for (int i = 0; i < reader.FieldCount; i++)
-                    {
-                        voditelData.Add(reader[i].ToString());
-                    }
-                }
-                await Navigation.PushAsync(new MainVoditelPage(voditelData));
+                await DisplayAlert("Ошибка", "Заполненны не все поля", "OK");
             }
             else
             {
-                await DisplayAlert("Не Ништяк", "Реально не ништяк", "OK");
+                DB db = new DB();
+                db.openConnection();
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `driver` WHERE `Phone_Driver`=@phoneDriver AND `Password_Driver`=@passwordDriver", db.getConnection());
+                command.Parameters.Add("@phoneDriver", MySqlDbType.VarChar).Value = phoneDriver;
+                command.Parameters.Add("@passwordDriver", MySqlDbType.VarChar).Value = passwordDriver;
+
+                MySqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            voditelData.Add(reader[i].ToString());
+                        }
+                    }
+                    await Navigation.PushAsync(new MainVoditelPage(voditelData));
+                }
+                else
+                {
+                    await DisplayAlert("Ошибка", "Такого пользавателя не существует", "OK");
+                }
+                db.closeConnection();
             }
-            db.closeConnection();
+            
         }
 
     }

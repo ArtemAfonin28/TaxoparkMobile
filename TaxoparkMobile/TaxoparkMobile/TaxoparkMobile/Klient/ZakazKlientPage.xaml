@@ -8,23 +8,12 @@
     <StackLayout>
 
         <Grid>
-            <ImageButton 
-                Margin="10,5,0,0"
-                x:Name="back" 
-                HeightRequest="60" 
-                WidthRequest="60"
-                BorderColor="blue"
-                BackgroundColor="Gray"
-                BorderWidth="3"
-                HorizontalOptions="Start" 
-                VerticalOptions="Center"
-                CornerRadius="30"
-            />
             <Label 
                 x:Name="KlientName"  TextColor="Black"
                 Text="Афонин Артем Викторович" FontSize="20" 
-                HorizontalOptions="Start" VerticalOptions="Center" 
-                Margin="80,0,0,0"
+                HorizontalOptions="Center" VerticalOptions="Center" VerticalTextAlignment="Center"
+                HeightRequest="50" 
+                Margin="0,0,0,0"
             />
         </Grid>
         <Label

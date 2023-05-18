@@ -38,11 +38,11 @@ namespace TaxoparkMobile
 
             if (reader.HasRows)
             {
-                await DisplayAlert("Ништяк", "Реально ништяк", "OK");
+                await DisplayAlert("Успех", "Успех", "OK");
             }
             else
             {
-                await DisplayAlert("Не Ништяк", "Реально не ништяк", "OK");
+                await DisplayAlert("Ошибка", "Ошибка", "OK");
             }
             db.closeConnection();
         }

@@ -84,7 +84,7 @@ namespace TaxoparkMobile
             command.Parameters.Add("@Otkuda", MySqlDbType.VarChar).Value = otkuda;
             command.Parameters.Add("@Kuda", MySqlDbType.VarChar).Value = kuda;
             MySqlDataReader reader = command.ExecuteReader();
-
+            call.Clear();
             if (reader.HasRows)
             {
                 while (reader.Read())

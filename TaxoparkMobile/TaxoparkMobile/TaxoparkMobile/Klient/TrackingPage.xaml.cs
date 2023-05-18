@@ -37,6 +37,8 @@ namespace TaxoparkMobile
 
             Label1.Text = call[2].ToString();
             Label2.Text = call[3].ToString();
+
+            
             OnTimerTick();
         }
 
@@ -49,10 +51,11 @@ namespace TaxoparkMobile
         {
             if (timer)
             {
-                button1.Text = i.ToString();
-                i++;
-                await Task.Delay(1000);
-                FillTable();
+                await Task.Delay(2000);
+                if (timer)
+                {
+                    FillTable();
+                }
             }
         }
 
@@ -74,6 +77,14 @@ namespace TaxoparkMobile
                     }
                 }
             }
+            else
+            {
+                timer = false;
+                DisplayAlert("Отлично", "Ваш заказ завершен", "ОК");
+                Navigation.PopAsync();
+            } 
+
+
             if (call[4] != "" && accepted == false)
             {
                 accepted = true;
@@ -115,7 +126,7 @@ namespace TaxoparkMobile
             MySqlCommand command = new MySqlCommand("SELECT `FIO_Driver`,`Model_Car`,`Register_Number` FROM `driver`,`car` WHERE `Car_Id_Car`=`Id_Car` AND `Id_Driver` =  @Id_Driver", db.getConnection());
             command.Parameters.Add("@Id_Driver", MySqlDbType.Int32).Value = Convert.ToInt32(call[10]);
             MySqlDataReader reader = command.ExecuteReader();
-
+            dataDriver.Clear();
             if (reader.HasRows)
             {
                 while (reader.Read())
@@ -129,6 +140,18 @@ namespace TaxoparkMobile
             Label3.Text = dataDriver[0].ToString();
             Label4.Text = dataDriver[1].ToString();
             Label5.Text = dataDriver[2].ToString();
+        }
+        private async void CancelButton_Clicked(object sender, EventArgs e)
+        {
+            timer = false;
+            DB db = new DB();
+            await DisplayAlert("Оповещение", "Вы отменили свой заказ", "ОК");
+            db.openConnection();
+            MySqlCommand command = new MySqlCommand("DELETE FROM `call` WHERE `Id_Call` = @id", db.getConnection());
+            command.Parameters.Add("@id", MySqlDbType.Int32).Value = Convert.ToInt32(call[0]);
+            command.ExecuteNonQuery();
+            db.closeConnection();
+            await Navigation.PopAsync();
         }
     }
 }
