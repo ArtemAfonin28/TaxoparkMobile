@@ -52,7 +52,7 @@ namespace TaxoparkMobile
                         command.Parameters.Add("@password", MySqlDbType.VarChar).Value = GetHashMD5(passwordUser);
                         if (command.ExecuteNonQuery() == 1)
                         {
-                            await DisplayAlert("Ништяк", "На другое окно", "OK");
+                            await DisplayAlert("Успех", "Вы успешно зарегистрировались", "OK");
                             db.closeConnection();
                             await Navigation.PopAsync();
                         }

@@ -29,7 +29,7 @@
         <Entry  x:Name="nameInput1" HorizontalTextAlignment="Center" WidthRequest="350" HorizontalOptions="Center"/>
 
         <Label Text="Введите пароль" FontSize="20" Padding="30,0,30,0"  HorizontalTextAlignment="Center"/>
-        <Entry x:Name="nameInput2" HorizontalTextAlignment="Center" WidthRequest="350" HorizontalOptions="Center"/>
+        <Entry x:Name="nameInput2" HorizontalTextAlignment="Center" WidthRequest="350" HorizontalOptions="Center" IsPassword ="True"/>
 
         <Button x:Name="vhod"  
                 Text="Войти" FontSize="16" 

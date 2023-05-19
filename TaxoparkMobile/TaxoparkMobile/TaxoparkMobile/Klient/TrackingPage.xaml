@@ -84,7 +84,7 @@
             />
         </Grid>
         <Label x:Name="stateCall"
-            Text="Водитель в пути, или нет"
+            Text="Ваш заказ еще никто не принял"
             HorizontalTextAlignment="Center" FontSize="20" TextColor="Black"
             Margin="0,30,0,0"
             />

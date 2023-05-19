@@ -62,9 +62,9 @@
                 >
             <Picker.Items>
                 <x:String>Без доп. услуг</x:String>
-                <x:String>Что то1</x:String>
-                <x:String>Что то2</x:String>
-                <x:String>Что то3</x:String>
+                <x:String>Десткое кресло</x:String>
+                <x:String>Зоотакси</x:String>
+                <x:String>Пустой багажник</x:String>
             </Picker.Items>
         </Picker>
         <Label Text="Выберите тариф" FontSize="20" 

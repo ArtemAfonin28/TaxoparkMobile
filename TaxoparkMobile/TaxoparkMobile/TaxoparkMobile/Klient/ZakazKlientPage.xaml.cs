@@ -15,7 +15,7 @@ namespace TaxoparkMobile
         List<string> userData = new List<string>();
         List<string> call = new List<string>();
 
-        public int tarif;
+        public int tarif = 0;
         public string otkuda;
         public string kuda;
         public ZakazKlientPage(List<string> userData2)
@@ -29,7 +29,7 @@ namespace TaxoparkMobile
 
         private async void Tracking_Clicked(object sender, EventArgs e)
         {
-            if (OtkudaEntry.Text == "" || KudaEntry.Text == "")
+            if (OtkudaEntry.Text == "" || KudaEntry.Text == "" || tarif == 0)
             {
                 await DisplayAlert("Ошибка", "Заполните все поля", "OK");
             } 
@@ -54,19 +54,13 @@ namespace TaxoparkMobile
                 command.Parameters.Add("@DataTime_Call", MySqlDbType.DateTime).Value = dateTime;
                 command.Parameters.Add("@Otkuda", MySqlDbType.VarChar).Value = otkuda;
                 command.Parameters.Add("@Kuda", MySqlDbType.VarChar).Value = kuda;
-
                 command.Parameters.Add("@id", MySqlDbType.Int32).Value = Convert.ToInt32(userData[0]);
-
                 if (addServices == 0)
                 {
                     command.Parameters.Add("@Add_Services", MySqlDbType.Int32).Value = null;
                 }
                 else command.Parameters.Add("@Add_Services", MySqlDbType.Int32).Value = addServices;
-                
                 command.Parameters.Add("@Tarif", MySqlDbType.Int32).Value = tarif;
-
-
-
                 if (command.ExecuteNonQuery() == 1)
                 {
                     db.closeConnection();

@@ -34,43 +34,48 @@ namespace TaxoparkMobile
 
         private void AcceptedCall_Clicked(object sender, EventArgs e)
         {
-            picker.IsEnabled = false;
-            DB db = new DB();
-            db.openConnection();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `call` WHERE `Id_Call` = @id", db.getConnection());
-            command.Parameters.Add("@id", MySqlDbType.Int32).Value = Convert.ToInt32(picker.SelectedItem);
-            MySqlDataReader reader = command.ExecuteReader();
-
-            if (reader.HasRows)
+            if (picker.SelectedItem != null)
             {
-                while (reader.Read())
+                picker.IsEnabled = false;
+                DB db = new DB();
+                db.openConnection();
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `call` WHERE `Id_Call` = @id", db.getConnection());
+                command.Parameters.Add("@id", MySqlDbType.Int32).Value = Convert.ToInt32(picker.SelectedItem);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
                 {
-                    for (int i = 0; i < reader.FieldCount; i++)
+                    while (reader.Read())
                     {
-                        acceptedCallData.Add(reader[i].ToString());
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            acceptedCallData.Add(reader[i].ToString());
+                        }
                     }
                 }
+                reader.Close();
+                db.closeConnection();
+
+                DateTime dateTime = new DateTime();
+                dateTime = DateTime.UtcNow;
+
+                db.openConnection();
+                MySqlCommand command2 = new MySqlCommand("UPDATE `call` SET `Accepted`= 1,`Accepted_DataTime`=@DataTime_Call, `Driver_Id_Driver`=@idDriver WHERE `Id_Call`= @id", db.getConnection());
+                command2.Parameters.Add("@id", MySqlDbType.Int32).Value = Convert.ToInt32(acceptedCallData[0]);
+                command2.Parameters.Add("@DataTime_Call", MySqlDbType.DateTime).Value = dateTime;
+                command2.Parameters.Add("@idDriver", MySqlDbType.Int32).Value = Convert.ToInt32(voditelData[0]);
+                command2.ExecuteNonQuery();
+                DisplayAlert("Отлично", "Вы приняли заказ", "Ок");
+                db.closeConnection();
+                Accepted.IsEnabled = false;
+                Alerts.IsEnabled = true;
+                CancelButton.IsEnabled = true;
+
+                Otkuda.Text = acceptedCallData[2];
+                Kuda.Text = acceptedCallData[3];
             }
-            reader.Close();
-            db.closeConnection();
-            
-            DateTime dateTime = new DateTime();
-            dateTime = DateTime.UtcNow;
+            else DisplayAlert("Ошибка", "Выберите код заказа", "Ок");
 
-            db.openConnection();
-            MySqlCommand command2 = new MySqlCommand("UPDATE `call` SET `Accepted`= 1,`Accepted_DataTime`=@DataTime_Call, `Driver_Id_Driver`=@idDriver WHERE `Id_Call`= @id", db.getConnection());
-            command2.Parameters.Add("@id", MySqlDbType.Int32).Value = Convert.ToInt32(acceptedCallData[0]);
-            command2.Parameters.Add("@DataTime_Call", MySqlDbType.DateTime).Value = dateTime;
-            command2.Parameters.Add("@idDriver", MySqlDbType.Int32).Value = Convert.ToInt32(voditelData[0]);
-            command2.ExecuteNonQuery();
-            DisplayAlert("Отлично", "Вы приняли заказ", "Ок");
-            db.closeConnection();
-            Accepted.IsEnabled= false;
-            Alerts.IsEnabled = true;
-            CancelButton.IsEnabled = true;
-
-            Otkuda.Text = acceptedCallData[2];
-            Kuda.Text = acceptedCallData[3];
         }
 
         private void Alerts_Clicked(object sender, EventArgs e)
@@ -152,16 +157,16 @@ namespace TaxoparkMobile
                     picker.Items.Add(reader[0].ToString());
 
                     string addservices;
-                    switch (Convert.ToInt32(reader[4]))
+                    switch (reader[4].ToString())
                     {
-                        case (1):
-                            addservices = "Доп услуга1";
+                        case ("1"):
+                            addservices = "Десткое кресло";
                             break;
-                        case (2):
-                            addservices = "Доп услуга2";
+                        case ("2"):
+                            addservices = "Зоотакси";
                             break;
-                        case (3):
-                            addservices = "Доп услуга3";
+                        case ("3"):
+                            addservices = "Пустой багажник";
                             break;
                         default:
                             addservices = "Без Доп услуг";

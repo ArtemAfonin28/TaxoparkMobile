@@ -59,7 +59,7 @@
             HorizontalTextAlignment="Center" 
             WidthRequest="350" 
             HorizontalOptions="Center"
-            Margin="0,-5,0,0"/>
+            Margin="0,-5,0,0" IsPassword ="True"/>
 
         <Label 
             Text="Повторите пароль" 
@@ -71,7 +71,7 @@
             HorizontalTextAlignment="Center" 
             WidthRequest="350" 
             HorizontalOptions="Center"
-            Margin="0,-5,0,0"/>
+            Margin="0,-5,0,0" IsPassword ="True"/>
 
         <Button x:Name="button1"  
                 Text="Регистрация" FontSize="16" 

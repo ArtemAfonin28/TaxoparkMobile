@@ -57,6 +57,10 @@ namespace TaxoparkMobile
                     FillTable();
                 }
             }
+            else
+            {
+                await Navigation.PopAsync();
+            }
         }
 
         private void FillTable()
@@ -80,8 +84,7 @@ namespace TaxoparkMobile
             else
             {
                 timer = false;
-                DisplayAlert("Отлично", "Ваш заказ завершен", "ОК");
-                Navigation.PopAsync();
+                OnTimerTick();
             } 
 
 
@@ -94,7 +97,7 @@ namespace TaxoparkMobile
             if (call[6] != "" && alert == false)
             {
                 alert = true;
-                stateCall.Text = "Водитель ожидавет вас";
+                stateCall.Text = "Водитель ожидает вас";
             }
             if (call[7] != "" && finished == false)
             {
