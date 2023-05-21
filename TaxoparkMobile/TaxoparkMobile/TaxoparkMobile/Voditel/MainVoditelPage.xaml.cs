@@ -20,6 +20,8 @@ namespace TaxoparkMobile
         public MainVoditelPage(List<string> voditelData2)
         {
             InitializeComponent();
+            updateButton.Source = ImageSource.FromResource("TaxoparkMobile.image.update.png");
+
 
             voditelData.AddRange(voditelData2);
             VoditelName.Text= voditelData2[1];
@@ -28,14 +30,75 @@ namespace TaxoparkMobile
             Finished.IsEnabled = false;
             CancelButton.IsEnabled = false;
 
-            UpdateCallView();
+            
+            if (HaveCall())
+            {
+                DisplayAlert("Оповещение", "У вас есть не завершенный заказ", "Ок");
+            }
+            else UpdateCallView();
+        }
 
+        private bool HaveCall()
+        {
+            DB db = new DB();
+            db.openConnection();
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `call` WHERE `Driver_Id_Driver` = @idDriver and `Accepted` = 1 ", db.getConnection());
+            command.Parameters.Add("@idDriver", MySqlDbType.Int32).Value = Convert.ToInt32(voditelData[0]);
+
+            MySqlDataReader reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        acceptedCallData.Add(reader[i].ToString());
+                    }
+                }
+                if (acceptedCallData[4] == "1" && acceptedCallData[6] == "1")
+                {
+                    picker.IsEnabled = false;
+                    Accepted.IsEnabled = false;
+                    Alerts.IsEnabled = false;
+                    Finished.IsEnabled = true;
+                    CancelButton.IsEnabled = true;
+
+                    Otkuda.Text = acceptedCallData[2];
+                    Kuda.Text = acceptedCallData[3];
+                    db.closeConnection();
+                    return true;
+                }
+                if (acceptedCallData[4] == "1")
+                {
+                    picker.IsEnabled = false;
+                    Accepted.IsEnabled = false;
+                    Alerts.IsEnabled = true;
+                    CancelButton.IsEnabled = true;
+
+                    Otkuda.Text = acceptedCallData[2];
+                    Kuda.Text = acceptedCallData[3];
+                    db.closeConnection();
+                    return true;
+                }
+                db.closeConnection();
+                return true;
+            }
+            else 
+            {
+                db.closeConnection();
+                return false;
+            }
+            
         }
 
         private void AcceptedCall_Clicked(object sender, EventArgs e)
         {
             if (picker.SelectedItem != null)
             {
+                acceptedCallData.Clear();
+
+                updateButton.IsEnabled = true;
                 picker.IsEnabled = false;
                 DB db = new DB();
                 db.openConnection();
@@ -90,17 +153,18 @@ namespace TaxoparkMobile
             Finished.IsEnabled = true;
             db.closeConnection();
         }
-        private void Finished_Clicked(object sender, EventArgs e)
+        private async void Finished_Clicked(object sender, EventArgs e)
         {
             DB db = new DB();
             db.openConnection();
             MySqlCommand command = new MySqlCommand("UPDATE `call` SET `Finished`= 1 WHERE `Id_Call` =@id", db.getConnection());
             command.Parameters.Add("@id", MySqlDbType.Int32).Value = Convert.ToInt32(acceptedCallData[0]);
             command.ExecuteNonQuery();
-            DisplayAlert("Отлично", "Заказ завершен", "Ок");
+            await DisplayAlert("Отлично", "Заказ завершен", "Ок");
             db.closeConnection();
             Finished.IsEnabled = false;
             DeleteFinishedCall();
+            await Task.Delay(2000);
             UpdateCallView();
 
         }
@@ -112,6 +176,8 @@ namespace TaxoparkMobile
             command.Parameters.Add("@id", MySqlDbType.Int32).Value = Convert.ToInt32(acceptedCallData[0]);
             command.ExecuteNonQuery();
             db.closeConnection();
+            acceptedCallData.Clear();
+            //тут уже вылет, хотя удаляет
         }
         private void CancelButton_Clicked(object sender, EventArgs e)
         {
@@ -124,9 +190,14 @@ namespace TaxoparkMobile
             db.closeConnection();
             UpdateCallView();
         }
+        private void UpdateButton_Clicked(object sender, EventArgs e)
+        {
+            UpdateCallView();
+        }
 
         private async void UpdateCallView()
         {
+            updateButton.IsEnabled= true;
             Otkuda.Text = "";
             Kuda.Text = "";
             picker.IsEnabled = true;
@@ -135,7 +206,6 @@ namespace TaxoparkMobile
             Finished.IsEnabled = false;
             CancelButton.IsEnabled = false;
 
-            acceptedCallData.Clear();
             callView.Children.Clear();
             picker.Items.Clear();
 

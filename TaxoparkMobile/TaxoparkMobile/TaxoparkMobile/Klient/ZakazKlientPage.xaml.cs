@@ -25,6 +25,34 @@ namespace TaxoparkMobile
             KlientName.Text = userData2[1];
             userData.AddRange(userData2);
             picker.SelectedIndex = 0;
+            HaveCall();
+        }
+
+        private async void HaveCall()
+        {
+            DB db = new DB();
+            db.openConnection();
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `call` WHERE `Client_Id_Client` = @id", db.getConnection());
+            command.Parameters.Add("@id", MySqlDbType.Int32).Value = Convert.ToInt32(userData[0]);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                await DisplayAlert("Оповещение", "У вас есть не завершенный заказ", "Ок");
+                while (reader.Read())
+                {
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        call.Add(reader[i].ToString());
+                    }
+                }
+                db.closeConnection();
+                await Navigation.PushAsync(new TrackingPage(userData, call));
+            }
+            else
+            {
+                db.closeConnection();
+            }
         }
 
         private async void Tracking_Clicked(object sender, EventArgs e)

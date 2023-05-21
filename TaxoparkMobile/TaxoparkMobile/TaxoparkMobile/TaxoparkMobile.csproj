@@ -29,6 +29,7 @@
     <None Remove="image\iconTaxi.png" />
     <None Remove="image\logo.png" />
     <None Remove="image\reg.png" />
+    <None Remove="image\update.png" />
     <None Remove="image\voditelLogo.png" />
   </ItemGroup>
 
@@ -38,6 +39,7 @@
     <EmbeddedResource Include="image\iconTaxi.png" />
     <EmbeddedResource Include="image\logo.png" />
     <EmbeddedResource Include="image\reg.png" />
+    <EmbeddedResource Include="image\update.png" />
     <EmbeddedResource Include="image\voditelLogo.png" />
   </ItemGroup>
 
