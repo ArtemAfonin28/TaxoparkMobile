@@ -22,9 +22,10 @@
         />
         <Label
             Text="Информация о вашем заказе"
-            HorizontalTextAlignment="Center" FontSize="20" TextColor="Black"
+            HorizontalTextAlignment="Center" FontSize="20" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"
             Margin="0,30,0,0"
         />
+
 
         <Grid Margin="5,30,5,0" BackgroundColor="Orange" RowSpacing="4" ColumnSpacing="4" HeightRequest="170">
             <Grid.ColumnDefinitions>

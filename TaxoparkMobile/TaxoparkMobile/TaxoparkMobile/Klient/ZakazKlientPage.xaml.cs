@@ -55,7 +55,9 @@ namespace TaxoparkMobile
             }
         }
 
-        private async void Tracking_Clicked(object sender, EventArgs e)
+
+
+		private async void Tracking_Clicked(object sender, EventArgs e)
         {
             if (OtkudaEntry.Text == "" || KudaEntry.Text == "" || tarif == 0)
             {

@@ -153,22 +153,21 @@ namespace TaxoparkMobile
             Finished.IsEnabled = true;
             db.closeConnection();
         }
-        private async void Finished_Clicked(object sender, EventArgs e)
+        private void Finished_Clicked(object sender, EventArgs e)
         {
-            DB db = new DB();
-            db.openConnection();
-            MySqlCommand command = new MySqlCommand("UPDATE `call` SET `Finished`= 1 WHERE `Id_Call` =@id", db.getConnection());
-            command.Parameters.Add("@id", MySqlDbType.Int32).Value = Convert.ToInt32(acceptedCallData[0]);
-            command.ExecuteNonQuery();
-            await DisplayAlert("Отлично", "Заказ завершен", "Ок");
-            db.closeConnection();
+            //DB db = new DB();
+            //db.openConnection();
+            //MySqlCommand command = new MySqlCommand("UPDATE `call` SET `Finished`= 1 WHERE `Id_Call` =@id", db.getConnection());
+            //command.Parameters.Add("@id", MySqlDbType.Int32).Value = Convert.ToInt32(acceptedCallData[0]);
+            //command.ExecuteNonQuery();
+            //await DisplayAlert("Отлично", "Заказ завершен", "Ок");
+            //db.closeConnection();
             Finished.IsEnabled = false;
             DeleteFinishedCall();
-            await Task.Delay(2000);
             UpdateCallView();
 
         }
-        private async void DeleteFinishedCall()
+        private void DeleteFinishedCall()
         {
             DB db = new DB();
             db.openConnection();
@@ -176,7 +175,6 @@ namespace TaxoparkMobile
             command.Parameters.Add("@id", MySqlDbType.Int32).Value = Convert.ToInt32(acceptedCallData[0]);
             command.ExecuteNonQuery();
             db.closeConnection();
-            acceptedCallData.Clear();
             //тут уже вылет, хотя удаляет
         }
         private void CancelButton_Clicked(object sender, EventArgs e)
@@ -195,7 +193,7 @@ namespace TaxoparkMobile
             UpdateCallView();
         }
 
-        private async void UpdateCallView()
+        private void UpdateCallView()
         {
             updateButton.IsEnabled= true;
             Otkuda.Text = "";
@@ -217,7 +215,6 @@ namespace TaxoparkMobile
                 "FROM `call` WHERE `Accepted` IS NULL and `Tarif_Id_Tarif`=@tarif", db.getConnection());
             command.Parameters.Add("@tarif", MySqlDbType.Int32).Value = Convert.ToInt32(voditelData[7]);
             MySqlDataReader reader = command.ExecuteReader();
-
             
             if (reader.HasRows)
             {

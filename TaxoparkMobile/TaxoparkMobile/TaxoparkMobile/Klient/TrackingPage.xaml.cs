@@ -34,7 +34,6 @@ namespace TaxoparkMobile
             call.AddRange(call2);
 
             KlientName.Text = userData2[1];
-
             Label1.Text = call[2].ToString();
             Label2.Text = call[3].ToString();
 
@@ -42,10 +41,6 @@ namespace TaxoparkMobile
             OnTimerTick();
         }
 
-        private void Tracking_Clicked(object sender, EventArgs e)
-        {
-
-        }
 
         private async void OnTimerTick()
         {
@@ -63,7 +58,15 @@ namespace TaxoparkMobile
             }
         }
 
-        private void FillTable()
+		protected override bool OnBackButtonPressed()
+		{
+			timer = false;
+            Navigation.PopAsync();
+            Navigation.PopAsync();
+            return true;
+		}
+
+		private void FillTable()
         {
             DB db = new DB();
             db.openConnection();
