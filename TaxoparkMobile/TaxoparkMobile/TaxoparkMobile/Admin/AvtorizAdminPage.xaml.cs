@@ -11,6 +11,7 @@ namespace TaxoparkMobile
 {
     public partial class AvtorizAdmintPage : ContentPage
     {
+        List<string> adminData = new List<string>();
         public AvtorizAdmintPage()
         {
             InitializeComponent();
@@ -26,19 +27,25 @@ namespace TaxoparkMobile
         {
             string phoneAdmin = nameInput1.Text;
             string passwordAdmin = nameInput2.Text;
-
+            
             DB db = new DB();
             db.openConnection();
             MySqlCommand command = new MySqlCommand("SELECT * FROM `admin` WHERE `Phone_Admin`=@phoneAdmin AND `Password_Admin`=@passwordAdmin", db.getConnection());
             command.Parameters.Add("@phoneAdmin", MySqlDbType.VarChar).Value = phoneAdmin;
             command.Parameters.Add("@passwordAdmin", MySqlDbType.VarChar).Value = passwordAdmin;
-
+            
             MySqlDataReader reader = command.ExecuteReader();
-
-
+            
+            
             if (reader.HasRows)
             {
-                await DisplayAlert("Успех", "Успех", "OK");
+                while (reader.Read())
+                {
+                    adminData.Add(reader[0].ToString());
+                    adminData.Add(reader[1].ToString());
+                    adminData.Add(reader[2].ToString());
+                }
+                await Navigation.PushAsync(new MainAdminPage(adminData));
             }
             else
             {
