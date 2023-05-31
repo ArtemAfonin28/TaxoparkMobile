@@ -21,9 +21,21 @@ namespace TaxoparkMobile
 
         }
 
-        private async void ButtonVod_Clicked(object sender, EventArgs e)
+        private async void ButtonRegVod_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new RegVoditelPage());
+        }
+        private async void UpdateVod_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ModerationVodPage());
+        }
+        private async void ButtonCall_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ModerationCallPage());
+        }
+        private async void ButtonInfo_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TableInfoPage());
         }
 
     }

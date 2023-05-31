@@ -11,8 +11,9 @@
         "dependencies": {
           "MySqlConnector": "2.2.6",
           "NETStandard.Library": "2.0.3",
-          "Xamarin.Essentials": "1.7.0",
-          "Xamarin.Forms": "5.0.0.2196"
+          "Xamarin.Essentials": "1.7.5",
+          "Xamarin.Forms": "5.0.0.2578",
+          "Xamarin.Forms.DataGrid": "5.0.0.2545"
         },
         "runtime": {
           "TaxoparkMobile.dll": {}
@@ -98,7 +99,7 @@
           }
         }
       },
-      "Xamarin.Essentials/1.7.0": {
+      "Xamarin.Essentials/1.7.5": {
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
         },
@@ -109,19 +110,30 @@
           }
         }
       },
-      "Xamarin.Forms/5.0.0.2196": {
+      "Xamarin.Forms/5.0.0.2578": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "5.0.0.786"
+            "fileVersion": "5.0.0.978"
           },
           "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "5.0.0.786"
+            "fileVersion": "5.0.0.978"
           },
           "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "5.0.0.786"
+            "fileVersion": "5.0.0.978"
+          }
+        }
+      },
+      "Xamarin.Forms.DataGrid/5.0.0.2545": {
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2578"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Forms.DataGrid.dll": {
+            "assemblyVersion": "5.0.0.2545",
+            "fileVersion": "5.0.0.2545"
           }
         }
       }
@@ -196,19 +208,26 @@
       "path": "system.threading.tasks.extensions/4.5.4",
       "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
     },
-    "Xamarin.Essentials/1.7.0": {
+    "Xamarin.Essentials/1.7.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-xfUJNxtfMC05VBej7fVUg6Zd9VwM2kqW9LH0tcrSA6IsBTl0EsIGkYUOz1BoKT2rseWW8o3kTi5WH/yZV4GgJw==",
-      "path": "xamarin.essentials/1.7.0",
-      "hashPath": "xamarin.essentials.1.7.0.nupkg.sha512"
+      "sha512": "sha512-+dDLUCXOehBxFOw5D5AXeFtcLQ0HBCMeVHSSbonVuZWJ2/8mb7+pGFQA8n053Lvpie7CAd8C+05chIKK6YCBiw==",
+      "path": "xamarin.essentials/1.7.5",
+      "hashPath": "xamarin.essentials.1.7.5.nupkg.sha512"
     },
-    "Xamarin.Forms/5.0.0.2196": {
+    "Xamarin.Forms/5.0.0.2578": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zSXDiZukojtEBmZKUUG1yYBwlB9tI8JLPkc6n+Sm1PAX01QyzErWE9AaFJgP7usyoGHn92l4HnQF7A+/MPI6VA==",
-      "path": "xamarin.forms/5.0.0.2196",
-      "hashPath": "xamarin.forms.5.0.0.2196.nupkg.sha512"
+      "sha512": "sha512-cUjv81PVlNKqAYA9k8WV0JZiCxjuCLqpICfaumHeJvEBxo7qUrEIXHCyS9+tAAV1JL/qwzD/FnkdVy8gO9TWrA==",
+      "path": "xamarin.forms/5.0.0.2578",
+      "hashPath": "xamarin.forms.5.0.0.2578.nupkg.sha512"
+    },
+    "Xamarin.Forms.DataGrid/5.0.0.2545": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KKniix9AxC0VYIRp5vHP4LK4jcbhJ0THeQwpUpXUxzUPx5DzTqRAo8iY6RRD733L6iWxbsH2dMklPBuFpi+psg==",
+      "path": "xamarin.forms.datagrid/5.0.0.2545",
+      "hashPath": "xamarin.forms.datagrid.5.0.0.2545.nupkg.sha512"
     }
   }
 }

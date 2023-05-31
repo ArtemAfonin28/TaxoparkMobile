@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaxoparkMobile.ModerationVodPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+        <Frame BorderColor="Gray" BackgroundColor="#e1e1e1" CornerRadius="8" Margin="30,20,30,0">
+            <Label FontSize="24" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0">
+                Список водителей
+            </Label>
+        </Frame>
+        <Grid Margin="0,20,0,0"  HeightRequest="40" BackgroundColor="DarkOrange" ColumnSpacing="4" RowSpacing="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Text="ФИО" Grid.Column="0" Grid.Row="0"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Black" BackgroundColor="White" Margin="0,0,0,3"></Label>
+            <Label Text="Телефон" Grid.Column="1" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="White" Margin="0,0,0,3"></Label>
+            <Label Text="Паспорт" Grid.Column="2" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="White" Margin="0,0,0,3"></Label>
+            <Label Text="Лицензия" Grid.Column="3" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="13" BackgroundColor="White" Margin="0,0,0,3"></Label>
+            <Label Text="Авто" Grid.Column="4" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="White" Margin="0,0,0,3"></Label>
+            <Label Text="Тариф" Grid.Column="5" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="White" Margin="0,0,0,3"></Label>
+        </Grid>
+        <ScrollView HeightRequest="200" BackgroundColor="DarkGray" Margin="0,-7,0,0">
+            <StackLayout x:Name="callView">
+
+            </StackLayout>
+        </ScrollView>
+        <Label TextColor="Black" HorizontalOptions="Center" FontSize="20" WidthRequest="300" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,20,0,0">Выберите водителя для редактирования</Label>
+
+        <Picker x:Name="pickerVod" HorizontalOptions="Center" WidthRequest="250" HorizontalTextAlignment="Center">
+            
+        </Picker>
+        <Button x:Name="DeleteVod" 
+                Clicked="DeleteVod_Clicked"
+                Text="Удалить водителя" FontSize="16" 
+                Background="Orange" 
+                HorizontalOptions="Center" WidthRequest="300" 
+                Margin="0,20,0,0"
+                BorderWidth="5"
+                CornerRadius="15"
+                BorderColor="DarkRed"/>
+
+        
+
+    </StackLayout>
+    
+
+</ContentPage>

@@ -4,17 +4,112 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaxoparkMobile.RegVoditelPage"
              NavigationPage.HasNavigationBar="False">
+    <ScrollView>
+        <StackLayout Padding="0,20,0,0">
+            <Frame BorderColor="Gray" BackgroundColor="#e1e1e1" CornerRadius="8" Margin="10,0,10,0">
+                <Label FontSize="24" HorizontalTextAlignment="Center" TextColor="Black" >
+                    Заполните данные о водителе 
+                </Label>
+            </Frame>
+            
+            <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,20,0,0" VerticalOptions="Center">
+                ФИО водителя:
+            </Label>
+            <Entry x:Name="fio" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" ></Entry>
+    
+    
+            <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0" VerticalOptions="Center">
+                Номер телефона:
+            </Label>
+            <Entry x:Name="telephone" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" Keyboard="Numeric"></Entry>
+    
+    
+            <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0" VerticalOptions="Center">
+                Паспортные данные:
+            </Label>
+            <Entry x:Name="passport" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" Keyboard="Numeric"></Entry>
+    
+            
+            <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0" VerticalOptions="Center">
+                Придумайте пароль для водителя:
+            </Label>
+            <Entry x:Name="password" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" ></Entry>
+    
+            
+            <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0" VerticalOptions="Center">
+                Водительская лицензия:
+            </Label>
+            <Entry x:Name="license" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" Keyboard="Numeric"></Entry>
 
-    <StackLayout>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Button Grid.Row="0" Content="Load Data" Click="LoadData_Click"/>
-            <DataGrid Grid.Row="1" Name="dataGrid" AutoGenerateColumns="True"/>
-        </Grid>
 
-    </StackLayout>
+            <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0" VerticalOptions="Center">
+                Присвойте тариф водителю:
+            </Label>
+            <Picker x:Name="tarif" Margin="10,0,10,0" HorizontalTextAlignment="Center" >
+                <Picker.Items>
+                    <x:String>Эконом</x:String>
+                    <x:String>Стандарт</x:String>
+                    <x:String>VIP</x:String>
+                </Picker.Items>
+            </Picker>
 
+            <Frame BorderColor="Gray" BackgroundColor="#e1e1e1" CornerRadius="8" Margin="10,0,10,0" >
+                <Label FontSize="24" HorizontalTextAlignment="Center" TextColor="Black">
+                    Заполните данные о его автомобиле
+                </Label>
+            </Frame>
+
+            <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,20,0,0" VerticalOptions="Center">
+                Марка автомобиля:
+            </Label>
+            <Entry x:Name="model" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" ></Entry>
+
+
+            <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0" VerticalOptions="Center">
+                Регистрационный номер авто:
+            </Label>
+            <Entry x:Name="register" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" ></Entry>
+
+
+            <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0" VerticalOptions="Center">
+                Номер кузова авто:
+            </Label>
+            <Entry x:Name="body" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" ></Entry>
+
+
+            <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0" VerticalOptions="Center">
+                Номер двигателя авто:
+            </Label>
+            <Entry x:Name="engine" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" ></Entry>
+
+
+            <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0" VerticalOptions="Center">
+                Год выпуска:
+            </Label>
+            <DatePicker x:Name="release" FontSize="18" TextColor="Black" Margin="10,0,10,0"  Format="dd/MM/yyyy" HorizontalOptions="Center"></DatePicker>
+
+
+            <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0" VerticalOptions="Center">
+                Пробег авто:
+            </Label>
+            <Entry x:Name="probeg" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" Keyboard="Numeric"></Entry>
+
+
+            <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0" VerticalOptions="Center">
+                Дата последнего технического обслуживания:
+            </Label>
+            <DatePicker x:Name="to" FontSize="18" TextColor="Black" Margin="10,0,10,0" Format="dd/MM/yyyy" HorizontalOptions="Center"></DatePicker>
+
+            <Button x:Name="Add"  
+                Clicked="Add_Clicked"
+                Text="Добавить водителя" FontSize="14" 
+                Background="yellow" 
+                HorizontalOptions="Center" WidthRequest="150" 
+                Margin="0,10,0,100"
+                BorderWidth="3"
+                CornerRadius="15"
+                BorderColor="Orange"/>
+            
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

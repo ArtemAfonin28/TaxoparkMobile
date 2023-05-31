@@ -47,11 +47,21 @@
 
   <ItemGroup>
     <PackageReference Include="MySqlConnector" Version="2.2.6" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.5" />
+    <PackageReference Include="Xamarin.Forms.DataGrid" Version="5.0.0.2545" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Admin\TableInfoPage.xaml.cs">
+      <DependentUpon>TableInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Admin\ModerationVodPage.xaml.cs">
+      <DependentUpon>ModerationVodPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Admin\ModerationCallPage.xaml.cs">
+      <DependentUpon>ModerationCallPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Admin\RegVoditelPage.xaml.cs">
       <DependentUpon>RegVoditelPage.xaml</DependentUpon>
     </Compile>

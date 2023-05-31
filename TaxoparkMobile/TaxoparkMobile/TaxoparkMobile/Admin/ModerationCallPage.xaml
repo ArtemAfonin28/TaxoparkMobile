@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaxoparkMobile.ModerationCallPage"
+             NavigationPage.HasNavigationBar="False">
+    <ScrollView WidthRequest="600">
+    <StackLayout>
+        <Frame BorderColor="Gray" BackgroundColor="#e1e1e1" CornerRadius="8" Margin="30,20,30,0">
+            <Label FontSize="24" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0">
+                Активные заказы
+            </Label>
+        </Frame>
+        <Grid Margin="0,20,0,0"  HeightRequest="40" BackgroundColor="DarkOrange" ColumnSpacing="4" RowSpacing="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Text="Время заказа" Grid.Column="0" Grid.Row="0"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Black" BackgroundColor="White" Margin="0,0,0,3"></Label>
+            <Label Text="Откуда" Grid.Column="1" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="White" Margin="0,0,0,3"></Label>
+                <Label Text="Куда" Grid.Column="2" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="White" Margin="0,0,0,3"></Label>
+                <Label Text="Клиент" Grid.Column="3" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="White" Margin="0,0,0,3"></Label>
+            <Label Text="Водитель" Grid.Column="4" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="White" Margin="0,0,0,3"></Label>
+            <Label Text="Доп. услуга" Grid.Column="5" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="White" Margin="0,0,0,3"></Label>
+        </Grid>
+        <ScrollView HeightRequest="200" BackgroundColor="DarkGray" Margin="0,-7,0,0">
+            <StackLayout x:Name="callView">
+
+            </StackLayout>
+        </ScrollView>
+
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

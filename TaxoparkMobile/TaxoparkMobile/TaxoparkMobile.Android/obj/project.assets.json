@@ -2100,6 +2100,18 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.DataGrid/5.0.0.2545": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2545"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Forms.DataGrid.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Forms.DataGrid.dll": {}
+        }
+      },
       "Xamarin.Google.Android.Material/1.4.0.2": {
         "type": "package",
         "dependencies": {
@@ -2162,8 +2174,9 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MySqlConnector": "2.2.6",
-          "Xamarin.Essentials": "1.7.0",
-          "Xamarin.Forms": "5.0.0.2196"
+          "Xamarin.Essentials": "1.7.5",
+          "Xamarin.Forms": "5.0.0.2578",
+          "Xamarin.Forms.DataGrid": "5.0.0.2545"
         },
         "compile": {
           "bin/placeholder/TaxoparkMobile.dll": {}
@@ -4411,6 +4424,18 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "Xamarin.Forms.DataGrid/5.0.0.2545": {
+      "sha512": "KKniix9AxC0VYIRp5vHP4LK4jcbhJ0THeQwpUpXUxzUPx5DzTqRAo8iY6RRD733L6iWxbsH2dMklPBuFpi+psg==",
+      "type": "package",
+      "path": "xamarin.forms.datagrid/5.0.0.2545",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Xamarin.Forms.DataGrid.dll",
+        "xamarin.forms.datagrid.5.0.0.2545.nupkg.sha512",
+        "xamarin.forms.datagrid.nuspec"
+      ]
+    },
     "Xamarin.Google.Android.Material/1.4.0.2": {
       "sha512": "2dH8pSYjlVmZk8E64E6/hZzsoTcubsH1DHLMYpnsXnteqVuFU42uG5pIuJZIOcLxgKX/QjLdMzth6/w+Oje8sQ==",
       "type": "package",
@@ -4523,5 +4548,27 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Обнаружено понижение версии пакета Xamarin.Essentials с 1.7.5 на 1.7.0. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n TaxoparkMobile.Android -> TaxoparkMobile -> Xamarin.Essentials (>= 1.7.5) \r\n TaxoparkMobile.Android -> Xamarin.Essentials (>= 1.7.0)",
+      "libraryId": "Xamarin.Essentials",
+      "targetGraphs": [
+        "MonoAndroid,Version=v13.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Обнаружено понижение версии пакета Xamarin.Forms с 5.0.0.2578 на 5.0.0.2196. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n TaxoparkMobile.Android -> TaxoparkMobile -> Xamarin.Forms (>= 5.0.0.2578) \r\n TaxoparkMobile.Android -> Xamarin.Forms (>= 5.0.0.2196)",
+      "libraryId": "Xamarin.Forms",
+      "targetGraphs": [
+        "MonoAndroid,Version=v13.0"
+      ]
+    }
+  ]
 }

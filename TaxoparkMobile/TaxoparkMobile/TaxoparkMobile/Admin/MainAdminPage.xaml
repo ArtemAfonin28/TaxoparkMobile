@@ -38,8 +38,8 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Button x:Name="ButtonVod"
-                Clicked="ButtonVod_Clicked"
+            <Button x:Name="ButtonRegVod"
+                Clicked="ButtonRegVod_Clicked"
                 Text="Добавить нового водителя" FontSize="14" 
                 Background="yellow" 
                 HorizontalOptions="Center" VerticalOptions="Center"
@@ -50,6 +50,7 @@
                 Grid.Column="0" Grid.Row="0"
                 />
             <Button x:Name="ButtonCall"
+                Clicked="ButtonCall_Clicked"
                 Text="Модерация заявок" FontSize="14" 
                 Background="yellow" 
                 HorizontalOptions="Center" VerticalOptions="Center"
@@ -59,7 +60,19 @@
                 BorderColor="Orange"
                 Grid.Column="1" Grid.Row="0"
                 />
+            <Button x:Name="UpdateVod"
+                Clicked="UpdateVod_Clicked"
+                Text="Редактирование данных водителей" FontSize="13" 
+                Background="yellow" 
+                HorizontalOptions="Center" VerticalOptions="Center"
+                WidthRequest="150" HeightRequest="80"
+                BorderWidth="4"
+                CornerRadius="15"
+                BorderColor="Orange"
+                Grid.Column="0" Grid.Row="1"
+                />
             <Button x:Name="ButtonInfo"
+                Clicked="ButtonInfo_Clicked"
                 Text="Просмотр информации" FontSize="14" 
                 Background="yellow" 
                 HorizontalOptions="Center" VerticalOptions="Center"
@@ -67,7 +80,7 @@
                 BorderWidth="4"
                 CornerRadius="15"
                 BorderColor="Orange"
-                Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
+                Grid.Column="1" Grid.Row="1"
                 />
         </Grid>
 

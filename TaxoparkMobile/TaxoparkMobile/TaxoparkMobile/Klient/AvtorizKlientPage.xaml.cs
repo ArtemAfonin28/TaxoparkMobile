@@ -31,7 +31,7 @@ namespace TaxoparkMobile
 
         private async void OpenReg_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new RegKlientPage());
+            await Navigation.PushAsync(new TableInfoPage());
         }
         private async void AdminButton_Clicked(object sender, EventArgs e)
         {

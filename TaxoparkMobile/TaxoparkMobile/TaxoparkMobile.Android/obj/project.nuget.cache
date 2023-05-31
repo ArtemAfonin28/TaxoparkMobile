@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rWcemM//KF4v9dV3TkH/joeypdSPJhWjESWShyE2yfHyebUhmNhsWAJcaX2AwgWx0mej2azfLvuhbmlqzzkXDw==",
+  "dgSpecHash": "E3N+PgnWXTdifJhnl082D857Qi3iHsohwgp1MuPydt4zjRqd1t/MKCm+jig1mpB4Ye0fS5jgqcOSPMKvpKTsYA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Savan\\Desktop\\git\\TaxoparkMobile\\TaxoparkMobile\\TaxoparkMobile\\TaxoparkMobile.Android\\TaxoparkMobile.Android.csproj",
   "expectedPackageFiles": [
@@ -82,8 +82,30 @@
     "C:\\Users\\Savan\\.nuget\\packages\\xamarin.androidx.viewpager2\\1.0.0.10\\xamarin.androidx.viewpager2.1.0.0.10.nupkg.sha512",
     "C:\\Users\\Savan\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
     "C:\\Users\\Savan\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512",
+    "C:\\Users\\Savan\\.nuget\\packages\\xamarin.forms.datagrid\\5.0.0.2545\\xamarin.forms.datagrid.5.0.0.2545.nupkg.sha512",
     "C:\\Users\\Savan\\.nuget\\packages\\xamarin.google.android.material\\1.4.0.2\\xamarin.google.android.material.1.4.0.2.nupkg.sha512",
     "C:\\Users\\Savan\\.nuget\\packages\\xamarin.google.guava.listenablefuture\\1.0.0.2\\xamarin.google.guava.listenablefuture.1.0.0.2.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Обнаружено понижение версии пакета Xamarin.Essentials с 1.7.5 на 1.7.0. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n TaxoparkMobile.Android -> TaxoparkMobile -> Xamarin.Essentials (>= 1.7.5) \r\n TaxoparkMobile.Android -> Xamarin.Essentials (>= 1.7.0)",
+      "libraryId": "Xamarin.Essentials",
+      "targetGraphs": [
+        "MonoAndroid,Version=v13.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Обнаружено понижение версии пакета Xamarin.Forms с 5.0.0.2578 на 5.0.0.2196. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n TaxoparkMobile.Android -> TaxoparkMobile -> Xamarin.Forms (>= 5.0.0.2578) \r\n TaxoparkMobile.Android -> Xamarin.Forms (>= 5.0.0.2196)",
+      "libraryId": "Xamarin.Forms",
+      "targetGraphs": [
+        "MonoAndroid,Version=v13.0"
+      ]
+    }
+  ]
 }

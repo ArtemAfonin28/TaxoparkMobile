@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaxoparkMobile.TableInfoPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+        <Grid Margin="0,20,0,0"  HeightRequest="200">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Button Clicked="Services_Clicked"  Text="Доп услуги" FontSize="12" Grid.Column="0" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="120" BackgroundColor="Yellow" BorderColor="Orange" BorderWidth="3" CornerRadius="30"></Button>
+            <Button Clicked="Call_Clicked"  Text="Вызовы" FontSize="12" Grid.Column="1" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="120" BackgroundColor="Yellow" BorderColor="Orange" BorderWidth="3" CornerRadius="30"></Button>
+            <Button Clicked="Car_Clicked"  Text="Автомобили" FontSize="12" Grid.Column="2" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="120" BackgroundColor="Yellow" BorderColor="Orange" BorderWidth="3" CornerRadius="30"></Button>
+            <Button Clicked="Client_Clicked"  Text="Клиенты" FontSize="12" Grid.Column="0" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="120" BackgroundColor="Yellow" BorderColor="Orange" BorderWidth="3" CornerRadius="30"></Button>
+            <Button Clicked="Driver_Clicked"  Text="Водители" FontSize="12" Grid.Column="1" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="120" BackgroundColor="Yellow" BorderColor="Orange" BorderWidth="3" CornerRadius="30"></Button>
+            <Button Clicked="Tarif_Clicked"  Text="Тарифы" FontSize="12" Grid.Column="2" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="120" BackgroundColor="Yellow" BorderColor="Orange" BorderWidth="3" CornerRadius="30"></Button>
+        </Grid>
+        
+        <StackLayout x:Name="NameColumn">
+
+        </StackLayout>
+        
+        <ScrollView HeightRequest="300" BackgroundColor="DarkGray" Margin="0,-7,0,0">
+            <StackLayout x:Name="callView">
+
+            </StackLayout>
+        </ScrollView>
+        
+    </StackLayout>
+    
+
+</ContentPage>
