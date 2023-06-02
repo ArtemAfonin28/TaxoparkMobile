@@ -14,21 +14,26 @@ namespace TaxoparkMobile
     {
 
         List<string> voditelData = new List<string>();
-        public string newcall;
+        public string newcall, comment;
         List<string> acceptedCallData = new List<string>();
+        int idVoditel;
 
         public MainVoditelPage(List<string> voditelData2)
         {
             InitializeComponent();
             updateButton.Source = ImageSource.FromResource("TaxoparkMobile.image.update.png");
-
+            Comment.Source = ImageSource.FromResource("TaxoparkMobile.image.coment.png");
+            Profile.Source = ImageSource.FromResource("TaxoparkMobile.image.profile.png");
 
             voditelData.AddRange(voditelData2);
+            idVoditel = Convert.ToInt32(voditelData2[0]);
             VoditelName.Text= voditelData2[1];
 
             Alerts.IsEnabled = false;
             Finished.IsEnabled = false;
             CancelButton.IsEnabled = false;
+            Comment.IsEnabled = false;
+            Comment.IsVisible = false;
 
             
             if (HaveCall())
@@ -49,8 +54,17 @@ namespace TaxoparkMobile
 
             if (reader.HasRows)
             {
+                
                 while (reader.Read())
                 {
+                    string field = reader[7].ToString();
+                    if (field != "")
+                    {
+                        Comment.IsEnabled = true;
+                        Comment.IsVisible = true;
+                        comment = reader[7].ToString();
+                    }
+
                     for (int i = 0; i < reader.FieldCount; i++)
                     {
                         acceptedCallData.Add(reader[i].ToString());
@@ -110,6 +124,14 @@ namespace TaxoparkMobile
                 {
                     while (reader.Read())
                     {
+                        string field = reader[7].ToString();
+                        if (field != "")
+                        {
+                            Comment.IsEnabled = true;
+                            Comment.IsVisible = true;
+                            comment = reader[7].ToString();
+                        }
+
                         for (int i = 0; i < reader.FieldCount; i++)
                         {
                             acceptedCallData.Add(reader[i].ToString());
@@ -136,10 +158,38 @@ namespace TaxoparkMobile
 
                 Otkuda.Text = acceptedCallData[2];
                 Kuda.Text = acceptedCallData[3];
+                IncrementCall();
             }
             else DisplayAlert("Ошибка", "Выберите код заказа", "Ок");
-
         }
+
+        private void IncrementCall()
+        {
+            DB db = new DB();
+            db.openConnection();
+            MySqlCommand command = new MySqlCommand("SELECT `CountCall` FROM `driver` WHERE `Id_Driver`=@idDriver", db.getConnection());
+            command.Parameters.Add("@idDriver", MySqlDbType.Int32).Value = Convert.ToInt32(voditelData[0]);
+            int count = Convert.ToInt32(command.ExecuteScalar())+1;
+
+            MySqlCommand command2 = new MySqlCommand("UPDATE `driver` SET `CountCall`=@inc WHERE `Id_Driver`=@idDriver", db.getConnection());
+            command2.Parameters.Add("@idDriver", MySqlDbType.Int32).Value = Convert.ToInt32(voditelData[0]);
+            command2.Parameters.Add("@inc", MySqlDbType.Int32).Value = count;
+            command2.ExecuteNonQuery();
+        }
+        private void IncrementCompletedCall()
+        {
+            DB db = new DB();
+            db.openConnection();
+            MySqlCommand command = new MySqlCommand("SELECT `CountCompletedCall` FROM `driver` WHERE `Id_Driver`=@idDriver", db.getConnection());
+            command.Parameters.Add("@idDriver", MySqlDbType.Int32).Value = Convert.ToInt32(voditelData[0]);
+            int count = Convert.ToInt32(command.ExecuteScalar()) + 1;
+
+            MySqlCommand command2 = new MySqlCommand("UPDATE `driver` SET `CountCompletedCall`=@inc WHERE `Id_Driver`=@idDriver", db.getConnection());
+            command2.Parameters.Add("@idDriver", MySqlDbType.Int32).Value = Convert.ToInt32(voditelData[0]);
+            command2.Parameters.Add("@inc", MySqlDbType.Int32).Value = count;
+            command2.ExecuteNonQuery();
+        }
+
 
         private void Alerts_Clicked(object sender, EventArgs e)
         {
@@ -155,13 +205,8 @@ namespace TaxoparkMobile
         }
         private void Finished_Clicked(object sender, EventArgs e)
         {
-            //DB db = new DB();
-            //db.openConnection();
-            //MySqlCommand command = new MySqlCommand("UPDATE `call` SET `Finished`= 1 WHERE `Id_Call` =@id", db.getConnection());
-            //command.Parameters.Add("@id", MySqlDbType.Int32).Value = Convert.ToInt32(acceptedCallData[0]);
-            //command.ExecuteNonQuery();
-            //await DisplayAlert("Отлично", "Заказ завершен", "Ок");
-            //db.closeConnection();
+            Comment.IsEnabled = false;
+            Comment.IsVisible = false;
             Finished.IsEnabled = false;
             DeleteFinishedCall();
             UpdateCallView();
@@ -175,10 +220,13 @@ namespace TaxoparkMobile
             command.Parameters.Add("@id", MySqlDbType.Int32).Value = Convert.ToInt32(acceptedCallData[0]);
             command.ExecuteNonQuery();
             db.closeConnection();
-            //тут уже вылет, хотя удаляет
+            DisplayAlert("Отлично", "Заказ завершен", "Ок");
+            IncrementCompletedCall();
         }
         private void CancelButton_Clicked(object sender, EventArgs e)
         {
+            Comment.IsEnabled = false;
+            Comment.IsVisible = false;
             DB db = new DB();
             db.openConnection();
             MySqlCommand command = new MySqlCommand("UPDATE `call` SET `Accepted`=null,`Accepted_DataTime`=null,`Alerts`=null,`Finished`=null,`Driver_Id_Driver`=null WHERE `Id_Call` = @id", db.getConnection());
@@ -213,7 +261,7 @@ namespace TaxoparkMobile
             db.openConnection();
             MySqlCommand command = new MySqlCommand("SELECT `Id_Call`,`DataTime_Call`,`Otkuda`,`Kuda`,`Add_Services_Id_Services` " +
                 "FROM `call` WHERE `Accepted` IS NULL and `Tarif_Id_Tarif`=@tarif", db.getConnection());
-            command.Parameters.Add("@tarif", MySqlDbType.Int32).Value = Convert.ToInt32(voditelData[7]);
+            command.Parameters.Add("@tarif", MySqlDbType.Int32).Value = Convert.ToInt32(voditelData[9]);
             MySqlDataReader reader = command.ExecuteReader();
             
             if (reader.HasRows)
@@ -286,6 +334,14 @@ namespace TaxoparkMobile
                     callView.Children.Add(box);
                 }
             }
+        }
+        private void Comment_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Коментарий от клиента", comment, "Ок");
+        }
+        private void Profile_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new VoditelAccountPage(idVoditel));
         }
     }
 }

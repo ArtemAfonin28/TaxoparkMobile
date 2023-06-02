@@ -38,8 +38,8 @@ namespace TaxoparkMobile
                 MySqlCommand command2 = new MySqlCommand("SELECT max(`Id_Car`) FROM `car`", db.getConnection());
                 idCar = Convert.ToInt32(command2.ExecuteScalar());
 
-                MySqlCommand command3 = new MySqlCommand("INSERT INTO `driver`(`Id_Driver`, `FIO_Driver`, `Phone_Driver`, `PassportData_Driver`, `Password_Driver`, `Driver_License`, `Car_Id_Car`, `Tarif_Id_Tarif`) " +
-                    "VALUES (default, @fio, @telephone, @passport, @password, @license, @car, @tarif)", db.getConnection());
+                MySqlCommand command3 = new MySqlCommand("INSERT INTO `driver`(`Id_Driver`, `FIO_Driver`, `Phone_Driver`, `PassportData_Driver`, `Password_Driver`, `Driver_License`, `CountCall`, `CountCompletedCall`, `Car_Id_Car`, `Tarif_Id_Tarif`) " +
+                    "VALUES (default, @fio, @telephone, @passport, @password, @license,0,0, @car, @tarif)", db.getConnection());
                 command3.Parameters.Add("@fio", MySqlDbType.VarChar).Value = fio.Text;
                 command3.Parameters.Add("@telephone", MySqlDbType.VarChar).Value = telephone.Text;
                 command3.Parameters.Add("@passport", MySqlDbType.VarChar).Value = passport.Text;

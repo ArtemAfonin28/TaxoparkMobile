@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaxoparkMobile.VoditelAccountPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+
+        <Label HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="20" Margin="0,20,0,0" TextColor="Black">Данные профиля водителя:</Label>
+        <Label x:Name="Name" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="20"  Margin="0,0,0,0">Данные профиля</Label>
+
+        <Label HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="18" Margin="0,20,0,0" TextColor="Black">Номер телефона:</Label>
+        <Label x:Name="Phone" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="16"  Margin="0,0,0,0">Данные профиля</Label>
+
+        <Label HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="18" Margin="0,20,0,0" TextColor="Black">Марка автомобиля:</Label>
+        <Label x:Name="Marka" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="16"  Margin="0,0,0,0">Данные профиля</Label>
+
+        <Label HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="18" Margin="0,20,0,0" TextColor="Black">Регистрационный номер автомобиля:</Label>
+        <Label x:Name="Number" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="16"  Margin="0,0,0,0">Данные профиля</Label>
+
+        <Label HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="18" Margin="0,20,0,0" TextColor="Black">Год выпуска автомобиля:</Label>
+        <Label x:Name="Year" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="16"  Margin="0,0,0,0">Данные профиля</Label>
+
+        <Label HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="18" Margin="0,20,0,0" TextColor="Black">Дата последнего ТО автомобиля:</Label>
+        <Label x:Name="YearTO" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="16"  Margin="0,0,0,0">Данные профиля</Label>
+
+        <Grid HeightRequest="80" Margin="0,30,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" HorizontalTextAlignment="Center" FontSize="16" TextColor="Black">Количество принятых заказов</Label>
+            <Label x:Name="CountCall" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="18" VerticalOptions="End">222</Label>
+
+            <Label Grid.Column="1" HorizontalTextAlignment="Center" FontSize="16" TextColor="Black">Количество завершенных заказов</Label>
+            <Label x:Name="CountCompletedCall" Grid.Column="1" HorizontalTextAlignment="Center" FontSize="18" VerticalOptions="End">222</Label>
+
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>

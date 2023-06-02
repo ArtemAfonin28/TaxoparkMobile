@@ -11,7 +11,7 @@
             <Label 
                 x:Name="KlientName"  TextColor="Black"
                 Text="Афонин Артем Викторович" FontSize="20" 
-                HorizontalOptions="Center" VerticalOptions="Center" VerticalTextAlignment="Center"
+                HorizontalOptions="Center" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
                 HeightRequest="50" 
                 Margin="0,0,0,0"
             />
@@ -67,6 +67,11 @@
                 <x:String>Пустой багажник</x:String>
             </Picker.Items>
         </Picker>
+
+        <ImageButton x:Name="Comment" Clicked="Comment_Clicked" BackgroundColor="Transparent" HorizontalOptions="Center" HeightRequest="40">
+            
+        </ImageButton>
+        
         <Label Text="Выберите тариф" FontSize="20" 
             Margin="0,10,0,0"
             TextColor="Black"

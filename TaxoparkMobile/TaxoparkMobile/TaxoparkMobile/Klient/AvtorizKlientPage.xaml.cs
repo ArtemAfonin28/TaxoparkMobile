@@ -31,7 +31,7 @@ namespace TaxoparkMobile
 
         private async void OpenReg_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new TableInfoPage());
+            await Navigation.PushAsync(new RegKlientPage());
         }
         private async void AdminButton_Clicked(object sender, EventArgs e)
         {
@@ -45,11 +45,7 @@ namespace TaxoparkMobile
         {
             string phoneUser = nameInput1.Text;
             string passwordUser = nameInput2.Text;
-            if (phoneUser == "" || passwordUser == "")
-            {
-                await DisplayAlert("Ошибка", "Заполните все поля", "OK");
-            }
-            else
+            try
             {
                 DB db = new DB();
                 db.openConnection();
@@ -73,6 +69,10 @@ namespace TaxoparkMobile
                     await DisplayAlert("Ошибка", "Не верные данные", "OK");
                 }
                 db.closeConnection();
+            }
+            catch 
+            {
+                await DisplayAlert("Ошибка", "Заполните все поля", "OK");
             }
 
         }

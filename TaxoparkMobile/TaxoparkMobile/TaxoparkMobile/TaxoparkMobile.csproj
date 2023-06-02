@@ -26,9 +26,11 @@
   <ItemGroup>
     <None Remove="image\adminLogo.png" />
     <None Remove="image\arrow.png" />
+    <None Remove="image\coment.png" />
     <None Remove="image\gear.png" />
     <None Remove="image\iconTaxi.png" />
     <None Remove="image\logo.png" />
+    <None Remove="image\profile.png" />
     <None Remove="image\reg.png" />
     <None Remove="image\update.png" />
     <None Remove="image\voditelLogo.png" />
@@ -37,9 +39,11 @@
   <ItemGroup>
     <EmbeddedResource Include="image\adminLogo.png" />
     <EmbeddedResource Include="image\arrow.png" />
+    <EmbeddedResource Include="image\coment.png" />
     <EmbeddedResource Include="image\gear.png" />
     <EmbeddedResource Include="image\iconTaxi.png" />
     <EmbeddedResource Include="image\logo.png" />
+    <EmbeddedResource Include="image\profile.png" />
     <EmbeddedResource Include="image\reg.png" />
     <EmbeddedResource Include="image\update.png" />
     <EmbeddedResource Include="image\voditelLogo.png" />
@@ -67,6 +71,9 @@
     </Compile>
     <Compile Update="Admin\MainAdminPage.xaml.cs">
       <DependentUpon>MainAdminPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Klient\VoditelAccountPage.xaml.cs">
+      <DependentUpon>VoditelAccountPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Klient\TrackingPage.xaml.cs">
       <DependentUpon>TrackingPage.xaml</DependentUpon>

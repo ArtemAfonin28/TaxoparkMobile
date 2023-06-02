@@ -17,18 +17,21 @@ namespace TaxoparkMobile
         List<string> userData = new List<string>();
         List<string> call = new List<string>();
         List<string> dataDriver = new List<string>();
+        int idVoditel;
 
         bool timer = true;
 
         bool accepted = false;
         bool alert = false;
-        bool finished = false;
 
         public int i = 0;
 
         public TrackingPage(List<string> userData2, List<string> call2)
         {
             InitializeComponent();
+            Profile.Source = ImageSource.FromResource("TaxoparkMobile.image.profile.png");
+            Profile.IsVisible = false;
+            ProfileLabel.IsVisible = false;
 
             userData.AddRange(userData2);
             call.AddRange(call2);
@@ -93,21 +96,18 @@ namespace TaxoparkMobile
 
             if (call[4] != "" && accepted == false)
             {
+                Profile.IsVisible = true;
                 accepted = true;
+                ProfileLabel.IsVisible = true;
                 stateCall.Text = "Ваш заказ был принят";
                 UpdateTable();
             }
             if (call[6] != "" && alert == false)
             {
+                Profile.IsVisible = true;
+                ProfileLabel.IsVisible = true;
                 alert = true;
                 stateCall.Text = "Водитель ожидает вас";
-            }
-            if (call[7] != "" && finished == false)
-            {
-                finished = true;
-                stateCall.Text = "Заказ завершен";
-                timer = false;
-                DeleteCall();
             }
             db.closeConnection();
             OnTimerTick();
@@ -129,7 +129,7 @@ namespace TaxoparkMobile
         {
             DB db = new DB();
             db.openConnection();
-            MySqlCommand command = new MySqlCommand("SELECT `FIO_Driver`,`Model_Car`,`Register_Number` FROM `driver`,`car` WHERE `Car_Id_Car`=`Id_Car` AND `Id_Driver` =  @Id_Driver", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT `Id_Driver`,`FIO_Driver`,`Model_Car`,`Register_Number` FROM `driver`,`car` WHERE `Car_Id_Car`=`Id_Car` AND `Id_Driver` =  @Id_Driver", db.getConnection());
             command.Parameters.Add("@Id_Driver", MySqlDbType.Int32).Value = Convert.ToInt32(call[10]);
             MySqlDataReader reader = command.ExecuteReader();
             dataDriver.Clear();
@@ -141,11 +141,12 @@ namespace TaxoparkMobile
                     {
                         dataDriver.Add(reader[i].ToString());
                     }
+                    idVoditel = Convert.ToInt32(reader[0]);
                 }
             }
-            Label3.Text = dataDriver[0].ToString();
-            Label4.Text = dataDriver[1].ToString();
-            Label5.Text = dataDriver[2].ToString();
+            Label3.Text = dataDriver[1].ToString();
+            Label4.Text = dataDriver[2].ToString();
+            Label5.Text = dataDriver[3].ToString();
         }
         private async void CancelButton_Clicked(object sender, EventArgs e)
         {
@@ -158,6 +159,10 @@ namespace TaxoparkMobile
             command.ExecuteNonQuery();
             db.closeConnection();
             await Navigation.PopAsync();
+        }
+        private void Profile_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new VoditelAccountPage(idVoditel));
         }
     }
 }

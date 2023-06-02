@@ -24,3 +24,4 @@ C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\Taxopark
 C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\Admin\ModerationCallPage.xaml.g.cs
 C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\Admin\ModerationVodPage.xaml.g.cs
 C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\Admin\TableInfoPage.xaml.g.cs
+C:\Users\Savan\Desktop\git\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\TaxoparkMobile\obj\Debug\netstandard2.0\Klient\VoditelAccountPage.xaml.g.cs

@@ -18,10 +18,13 @@ namespace TaxoparkMobile
         public int tarif = 0;
         public string otkuda;
         public string kuda;
+        string result;
         public ZakazKlientPage(List<string> userData2)
         {
             InitializeComponent();
+            Comment.Source = ImageSource.FromResource("TaxoparkMobile.image.coment.png");
             icon.Source = ImageSource.FromResource("TaxoparkMobile.image.iconTaxi.png");
+
             KlientName.Text = userData2[1];
             userData.AddRange(userData2);
             picker.SelectedIndex = 0;
@@ -75,15 +78,20 @@ namespace TaxoparkMobile
                 kuda = KudaEntry.Text;
                 addServices = picker.SelectedIndex;
 
+                if (result == "")
+                {
+                    result = "null";
+                }
 
                 DB db = new DB();
                 db.openConnection();
                 MySqlCommand command = new MySqlCommand("INSERT INTO `call`" +
-                    "(`Id_Call`, `DataTime_Call`, `Otkuda`, `Kuda`, `Accepted`, `Accepted_DataTime`, `Alerts`, `Finished`, `Client_Id_Client`, `Add_Services_Id_Services`, `Driver_Id_Driver`,`Tarif_Id_Tarif`)" +
-                    " VALUES (default,@DataTime_Call,@Otkuda,@Kuda,null,null,null,null,@id,@Add_Services,null,@Tarif)", db.getConnection());
+                    "(`Id_Call`, `DataTime_Call`, `Otkuda`, `Kuda`, `Accepted`, `Accepted_DataTime`, `Alerts`,`Coment`, `Client_Id_Client`, `Add_Services_Id_Services`, `Driver_Id_Driver`,`Tarif_Id_Tarif`)" +
+                    " VALUES (default,@DataTime_Call,@Otkuda,@Kuda,null,null,null,@comment,@id,@Add_Services,null,@Tarif)", db.getConnection());
                 command.Parameters.Add("@DataTime_Call", MySqlDbType.DateTime).Value = dateTime;
                 command.Parameters.Add("@Otkuda", MySqlDbType.VarChar).Value = otkuda;
                 command.Parameters.Add("@Kuda", MySqlDbType.VarChar).Value = kuda;
+                command.Parameters.Add("@comment", MySqlDbType.VarChar).Value = result;
                 command.Parameters.Add("@id", MySqlDbType.Int32).Value = Convert.ToInt32(userData[0]);
                 if (addServices == 0)
                 {
@@ -123,7 +131,10 @@ namespace TaxoparkMobile
             //await Navigation.PushAsync(new TrackingPage());
         }
 
-
+        private async void Comment_Clicked(object sender, EventArgs e)
+        {
+            result = await DisplayPromptAsync("Комментарий", "Напишите особенности поездки водителю");
+        }
 
 
         private void Tarif1_Clicked(object sender, EventArgs e)

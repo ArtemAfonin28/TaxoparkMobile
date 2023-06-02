@@ -51,7 +51,7 @@
                 />
             <Button x:Name="ButtonCall"
                 Clicked="ButtonCall_Clicked"
-                Text="Модерация заявок" FontSize="14" 
+                Text="Модерация принятых заявок" FontSize="14" 
                 Background="yellow" 
                 HorizontalOptions="Center" VerticalOptions="Center"
                 WidthRequest="150" HeightRequest="80"
@@ -62,7 +62,7 @@
                 />
             <Button x:Name="UpdateVod"
                 Clicked="UpdateVod_Clicked"
-                Text="Редактирование данных водителей" FontSize="13" 
+                Text="Удаление водителей" FontSize="13" 
                 Background="yellow" 
                 HorizontalOptions="Center" VerticalOptions="Center"
                 WidthRequest="150" HeightRequest="80"
