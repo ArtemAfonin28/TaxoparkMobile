@@ -25,7 +25,8 @@ namespace TaxoparkMobile
         {
             DB db = new DB();
             db.openConnection();
-            MySqlCommand command = new MySqlCommand("SELECT `FIO_Driver`,`Phone_Driver`,`Model_Car`,`Register_Number`,`Year_Release`,`Data_TO`, `CountCall`, `CountCompletedCall` FROM `driver`,`car` WHERE `Car_Id_Car`=`Id_Car` and `Id_Driver`=@id", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT `FIO_Driver`,`Phone_Driver`,`Model_Car`,`Register_Number`,`Year_Release`,`Data_TO`, `CountCall`," +
+                " `CountCompletedCall` FROM `driver`,`car` WHERE `Car_Id_Car`=`Id_Car` and `Id_Driver`=@id", db.getConnection());
             command.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
             MySqlDataReader reader = command.ExecuteReader();
 

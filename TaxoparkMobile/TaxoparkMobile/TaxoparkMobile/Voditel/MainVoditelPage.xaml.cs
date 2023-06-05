@@ -229,7 +229,8 @@ namespace TaxoparkMobile
             Comment.IsVisible = false;
             DB db = new DB();
             db.openConnection();
-            MySqlCommand command = new MySqlCommand("UPDATE `call` SET `Accepted`=null,`Accepted_DataTime`=null,`Alerts`=null,`Finished`=null,`Driver_Id_Driver`=null WHERE `Id_Call` = @id", db.getConnection());
+            MySqlCommand command = new MySqlCommand("UPDATE `call` SET `Accepted`=null,`Accepted_DataTime`=null,`Alerts`=null," +
+                "`Finished`=null,`Driver_Id_Driver`=null WHERE `Id_Call` = @id", db.getConnection());
             command.Parameters.Add("@id", MySqlDbType.Int32).Value = Convert.ToInt32(acceptedCallData[0]);
             command.ExecuteNonQuery();
             DisplayAlert("Оповещение", "Вы отменили свой заказ", "Ок");
