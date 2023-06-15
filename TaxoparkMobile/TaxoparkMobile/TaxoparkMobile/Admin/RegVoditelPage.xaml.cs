@@ -43,7 +43,7 @@ namespace TaxoparkMobile
                 command3.Parameters.Add("@fio", MySqlDbType.VarChar).Value = fio.Text;
                 command3.Parameters.Add("@telephone", MySqlDbType.VarChar).Value = telephone.Text;
                 command3.Parameters.Add("@passport", MySqlDbType.VarChar).Value = passport.Text;
-                command3.Parameters.Add("@password", MySqlDbType.VarChar).Value = password.Text;
+                command3.Parameters.Add("@password", MySqlDbType.VarChar).Value = GetHashMD5(password.Text);
                 command3.Parameters.Add("@license", MySqlDbType.VarChar).Value = license.Text;
                 command3.Parameters.Add("@car", MySqlDbType.Int32).Value = idCar;
                 command3.Parameters.Add("@tarif", MySqlDbType.Int32).Value = tarif.SelectedIndex + 1;

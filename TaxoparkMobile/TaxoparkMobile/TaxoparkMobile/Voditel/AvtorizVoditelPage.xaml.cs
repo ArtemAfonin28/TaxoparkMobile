@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -38,7 +39,7 @@ namespace TaxoparkMobile
                 db.openConnection();
                 MySqlCommand command = new MySqlCommand("SELECT * FROM `driver` WHERE `Phone_Driver`=@phoneDriver AND `Password_Driver`=@passwordDriver", db.getConnection());
                 command.Parameters.Add("@phoneDriver", MySqlDbType.VarChar).Value = phoneDriver;
-                command.Parameters.Add("@passwordDriver", MySqlDbType.VarChar).Value = passwordDriver;
+                command.Parameters.Add("@passwordDriver", MySqlDbType.VarChar).Value = GetHashMD5(passwordDriver);
 
                 MySqlDataReader reader = command.ExecuteReader();
 
@@ -61,6 +62,13 @@ namespace TaxoparkMobile
                 db.closeConnection();
             }
             
+        }
+        public string GetHashMD5(string input)
+        {
+            var md5 = MD5.Create();
+            var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
+
+            return Convert.ToBase64String(hash);
         }
 
     }
