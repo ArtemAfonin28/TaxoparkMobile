@@ -27,32 +27,37 @@ namespace TaxoparkMobile
         {
             string phoneAdmin = nameInput1.Text;
             string passwordAdmin = nameInput2.Text;
-            
-            DB db = new DB();
-            db.openConnection();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `admin` WHERE `Phone_Admin`=@phoneAdmin AND `Password_Admin`=@passwordAdmin", db.getConnection());
-            command.Parameters.Add("@phoneAdmin", MySqlDbType.VarChar).Value = phoneAdmin;
-            command.Parameters.Add("@passwordAdmin", MySqlDbType.VarChar).Value = passwordAdmin;
-            
-            MySqlDataReader reader = command.ExecuteReader();
-            
-            
-            if (reader.HasRows)
+            if (nameInput1.Text == null || nameInput2.Text == null)
             {
-                while (reader.Read())
-                {
-                    adminData.Add(reader[0].ToString());
-                    adminData.Add(reader[1].ToString());
-                    adminData.Add(reader[2].ToString());
-                }
-                await Navigation.PushAsync(new MainAdminPage(adminData));
+                await DisplayAlert("Ошибка", "Заполните все поля", "OK");
             }
             else
             {
-                await DisplayAlert("Ошибка", "Ошибка", "OK");
-            }
-            db.closeConnection();
-        }
+                DB db = new DB();
+                db.openConnection();
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `admin` WHERE `Phone_Admin`=@phoneAdmin AND `Password_Admin`=MD5(@passwordAdmin)", db.getConnection());
+                command.Parameters.Add("@phoneAdmin", MySqlDbType.VarChar).Value = phoneAdmin;
+                command.Parameters.Add("@passwordAdmin", MySqlDbType.VarChar).Value = passwordAdmin;
 
+                MySqlDataReader reader = command.ExecuteReader();
+
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        adminData.Add(reader[0].ToString());
+                        adminData.Add(reader[1].ToString());
+                        adminData.Add(reader[2].ToString());
+                    }
+                    await Navigation.PushAsync(new MainAdminPage(adminData));
+                }
+                else
+                {
+                    await DisplayAlert("Ошибка", "Не верные данные", "OK");
+                }
+                db.closeConnection();
+            }
+        }
     }
 }

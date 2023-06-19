@@ -33,7 +33,7 @@ namespace TaxoparkMobile
             string phoneUser = Phone.Text;
             string passwordUser = Password.Text;
             string passwordUser2 = Password2.Text;
-            if (fioUser == "" || phoneUser == "" || passwordUser == "" || passwordUser2 == "")
+            if (fioUser == null || phoneUser == null || passwordUser == null || passwordUser2 == null)
             {
                 await DisplayAlert("Ошибка", "Заполнены не все поля", "OK");
             }

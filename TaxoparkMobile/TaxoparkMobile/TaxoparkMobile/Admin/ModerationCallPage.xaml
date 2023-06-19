@@ -4,7 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaxoparkMobile.ModerationCallPage"
              NavigationPage.HasNavigationBar="False">
-    <ScrollView WidthRequest="600">
+    
     <StackLayout>
         <Frame BorderColor="Gray" BackgroundColor="#e1e1e1" CornerRadius="8" Margin="30,20,30,0">
             <Label FontSize="24" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0">
@@ -25,8 +25,8 @@
             </Grid.RowDefinitions>
             <Label Text="Время заказа" Grid.Column="0" Grid.Row="0"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Black" BackgroundColor="White" Margin="0,0,0,3"></Label>
             <Label Text="Откуда" Grid.Column="1" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="White" Margin="0,0,0,3"></Label>
-                <Label Text="Куда" Grid.Column="2" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="White" Margin="0,0,0,3"></Label>
-                <Label Text="Клиент" Grid.Column="3" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="White" Margin="0,0,0,3"></Label>
+            <Label Text="Куда" Grid.Column="2" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="White" Margin="0,0,0,3"></Label>
+            <Label Text="Клиент" Grid.Column="3" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="White" Margin="0,0,0,3"></Label>
             <Label Text="Водитель" Grid.Column="4" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="White" Margin="0,0,0,3"></Label>
             <Label Text="Доп. услуга" Grid.Column="5" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="White" Margin="0,0,0,3"></Label>
         </Grid>
@@ -36,8 +36,24 @@
             </StackLayout>
         </ScrollView>
 
+    <Picker x:Name="Call" Margin="30,10,30,0" HorizontalTextAlignment="Center" Title="Выберите заказ">
+        
+    </Picker>
 
-        </StackLayout>
-    </ScrollView>
+    <Picker x:Name="Driver" Margin="30,10,30,0" HorizontalTextAlignment="Center" Title="Выберите водителя">
+
+    </Picker>
+
+        <Button x:Name="ReplaceDriver"  
+            Clicked="ReplaceDriver_Clicked"
+            Text="Закрепить нового водителя за заказом" FontSize="14" 
+            Background="yellow" 
+            HorizontalOptions="Center" 
+            Margin="0,20,0,0"
+            BorderWidth="3"
+            CornerRadius="15"
+            BorderColor="Orange"/>
+    </StackLayout>
+    
 
 </ContentPage>

@@ -15,31 +15,31 @@
             <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,20,0,0" VerticalOptions="Center">
                 ФИО водителя:
             </Label>
-            <Entry x:Name="fio" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" ></Entry>
+            <Entry x:Name="fio" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" MaxLength="60"></Entry>
     
     
             <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0" VerticalOptions="Center">
                 Номер телефона:
             </Label>
-            <Entry x:Name="telephone" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" Keyboard="Numeric"></Entry>
+            <Entry x:Name="telephone" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" Keyboard="Numeric" MaxLength="20"></Entry>
     
     
             <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0" VerticalOptions="Center">
                 Паспортные данные:
             </Label>
-            <Entry x:Name="passport" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" Keyboard="Numeric"></Entry>
+            <Entry x:Name="passport" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" MaxLength="11"></Entry>
     
             
             <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0" VerticalOptions="Center">
                 Придумайте пароль для водителя:
             </Label>
-            <Entry x:Name="password" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" ></Entry>
+            <Entry x:Name="password" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" MaxLength="8"></Entry>
     
             
             <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0" VerticalOptions="Center">
                 Водительская лицензия:
             </Label>
-            <Entry x:Name="license" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" Keyboard="Numeric"></Entry>
+            <Entry x:Name="license" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" Keyboard="Numeric" MaxLength="11"></Entry>
 
 
             <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0" VerticalOptions="Center">
@@ -62,25 +62,25 @@
             <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,20,0,0" VerticalOptions="Center">
                 Марка автомобиля:
             </Label>
-            <Entry x:Name="model" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" ></Entry>
+            <Entry x:Name="model" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" MaxLength="25"></Entry>
 
 
             <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0" VerticalOptions="Center">
                 Регистрационный номер авто:
             </Label>
-            <Entry x:Name="register" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" ></Entry>
+            <Entry x:Name="register" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" MaxLength="10"></Entry>
 
 
             <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0" VerticalOptions="Center">
                 Номер кузова авто:
             </Label>
-            <Entry x:Name="body" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" ></Entry>
+            <Entry x:Name="body" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" MaxLength="17"></Entry>
 
 
             <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0" VerticalOptions="Center">
                 Номер двигателя авто:
             </Label>
-            <Entry x:Name="engine" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" ></Entry>
+            <Entry x:Name="engine" FontSize="16" TextColor="Black" Margin="10,0,10,0" VerticalOptions="Center" MaxLength="11"></Entry>
 
 
             <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,0" VerticalOptions="Center">
@@ -100,7 +100,7 @@
             </Label>
             <DatePicker x:Name="to" FontSize="18" TextColor="Black" Margin="10,0,10,0" Format="dd/MM/yyyy" HorizontalOptions="Center"></DatePicker>
 
-            <Button x:Name="Add"  
+            <Button x:Name="Add" 
                 Clicked="Add_Clicked"
                 Text="Добавить водителя" FontSize="14" 
                 Background="yellow" 

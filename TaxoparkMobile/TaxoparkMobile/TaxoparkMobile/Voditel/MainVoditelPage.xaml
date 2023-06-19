@@ -147,7 +147,7 @@
         <Grid>
             <Button x:Name="Alerts"  
                 Clicked="Alerts_Clicked"
-                Text="Оповестить о том что вы подьехали" FontSize="13" 
+                Text="Оповестить о том что вы подьехали" FontSize="11" 
                 Background="yellow" 
                 HorizontalOptions="Start" WidthRequest="150" 
                 Margin="30,10,0,0"

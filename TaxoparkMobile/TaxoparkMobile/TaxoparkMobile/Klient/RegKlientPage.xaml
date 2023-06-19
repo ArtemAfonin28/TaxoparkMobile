@@ -29,7 +29,7 @@
             FontSize="20" 
             Margin="0,30,0,0"  
             HorizontalTextAlignment="Center"/>
-        <Entry  
+        <Entry MaxLength="60"
             x:Name="FIO" 
             HorizontalTextAlignment="Center"
             WidthRequest="350" 
@@ -42,7 +42,7 @@
             Margin="0,10,0,0"  
             HorizontalTextAlignment="Center"/>
         <Entry 
-            x:Name="Phone" 
+            x:Name="Phone" MaxLength="20"
             HorizontalTextAlignment="Center" 
             WidthRequest="350" 
             HorizontalOptions="Center"
@@ -55,7 +55,7 @@
             Margin="0,10,0,0"  
             HorizontalTextAlignment="Center"/>
         <Entry 
-            x:Name="Password" 
+            x:Name="Password" MaxLength="8"
             HorizontalTextAlignment="Center" 
             WidthRequest="350" 
             HorizontalOptions="Center"
@@ -67,7 +67,7 @@
             Margin="0,10,0,0"  
             HorizontalTextAlignment="Center"/>
         <Entry 
-            x:Name="Password2" 
+            x:Name="Password2" MaxLength="8"
             HorizontalTextAlignment="Center" 
             WidthRequest="350" 
             HorizontalOptions="Center"

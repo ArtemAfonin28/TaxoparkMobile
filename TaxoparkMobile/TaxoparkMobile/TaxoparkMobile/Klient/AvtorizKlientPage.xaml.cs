@@ -45,7 +45,11 @@ namespace TaxoparkMobile
         {
             string phoneUser = nameInput1.Text;
             string passwordUser = nameInput2.Text;
-            try
+            if (nameInput1.Text == null || nameInput2.Text == null)
+            {
+                await DisplayAlert("Ошибка", "Заполните все поля", "OK");
+            }
+            else
             {
                 DB db = new DB();
                 db.openConnection();
@@ -70,10 +74,8 @@ namespace TaxoparkMobile
                 }
                 db.closeConnection();
             }
-            catch 
-            {
-                await DisplayAlert("Ошибка", "Заполните все поля", "OK");
-            }
+                
+            
 
         }
         public string GetHashMD5(string input)

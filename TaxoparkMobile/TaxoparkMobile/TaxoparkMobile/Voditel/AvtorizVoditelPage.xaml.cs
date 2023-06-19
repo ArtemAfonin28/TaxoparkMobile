@@ -29,7 +29,7 @@ namespace TaxoparkMobile
             
             string phoneDriver = nameInput1.Text;
             string passwordDriver = nameInput2.Text;
-            if (phoneDriver == "" || passwordDriver == "")
+            if (phoneDriver == null || passwordDriver == null)
             {
                 await DisplayAlert("Ошибка", "Заполненны не все поля", "OK");
             }

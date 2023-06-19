@@ -47,18 +47,27 @@ namespace TaxoparkMobile
 
         private async void OnTimerTick()
         {
-            if (timer)
+            try
             {
-                await Task.Delay(2000);
                 if (timer)
                 {
-                    FillTable();
+                    await Task.Delay(2000);
+                    if (timer)
+                    {
+                        FillTable();
+                    }
+                }
+                else
+                {
+                    await Navigation.PopAsync();
                 }
             }
-            else
+            catch
             {
+                await DisplayAlert("Оповещение", "Ваш заказ завершен", "ОК");
                 await Navigation.PopAsync();
             }
+            
         }
 
 		protected override bool OnBackButtonPressed()
@@ -93,6 +102,7 @@ namespace TaxoparkMobile
                 OnTimerTick();
             } 
 
+            
 
             if (call[4] != "" && accepted == false)
             {
@@ -102,12 +112,24 @@ namespace TaxoparkMobile
                 stateCall.Text = "Ваш заказ был принят";
                 UpdateTable();
             }
-            if (call[6] != "" && alert == false)
+            else if (call[6] != "" && alert == false)
             {
                 Profile.IsVisible = true;
                 ProfileLabel.IsVisible = true;
                 alert = true;
                 stateCall.Text = "Водитель ожидает вас";
+            }
+            else if (accepted == true && call[4] == "")
+            {
+                stateCall.Text = "Ваш заказ еще никто не принял";
+                Label3.Text = "Неизвестно";
+                Label4.Text = "Неизвестно";
+                Label5.Text = "Неизвестно";
+                Profile.IsVisible = false;
+                ProfileLabel.IsVisible = false;
+
+                alert = false;
+                accepted = false;
             }
             db.closeConnection();
             OnTimerTick();

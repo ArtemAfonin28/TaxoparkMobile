@@ -122,6 +122,7 @@ namespace TaxoparkMobile
 
                 if (reader.HasRows)
                 {
+                    updateButton.IsEnabled = false;
                     while (reader.Read())
                     {
                         string field = reader[7].ToString();
@@ -208,6 +209,7 @@ namespace TaxoparkMobile
             Comment.IsEnabled = false;
             Comment.IsVisible = false;
             Finished.IsEnabled = false;
+            updateButton.IsEnabled = true;
             DeleteFinishedCall();
             UpdateCallView();
 
@@ -230,10 +232,11 @@ namespace TaxoparkMobile
             DB db = new DB();
             db.openConnection();
             MySqlCommand command = new MySqlCommand("UPDATE `call` SET `Accepted`=null,`Accepted_DataTime`=null,`Alerts`=null," +
-                "`Finished`=null,`Driver_Id_Driver`=null WHERE `Id_Call` = @id", db.getConnection());
+                "`Driver_Id_Driver`=null WHERE `Id_Call` = @id", db.getConnection());
             command.Parameters.Add("@id", MySqlDbType.Int32).Value = Convert.ToInt32(acceptedCallData[0]);
             command.ExecuteNonQuery();
             DisplayAlert("Оповещение", "Вы отменили свой заказ", "Ок");
+            updateButton.IsEnabled = true;
             db.closeConnection();
             UpdateCallView();
         }
@@ -291,7 +294,9 @@ namespace TaxoparkMobile
 
                     Grid grid = new Grid
                     {
-                        RowSpacing = -30,
+                        HeightRequest = 45,
+                        RowSpacing = -45,
+                        //RowSpacing = -30,
                         ColumnSpacing = 1,
                         RowDefinitions =
                         {
@@ -338,7 +343,7 @@ namespace TaxoparkMobile
         }
         private void Comment_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Коментарий от клиента", comment, "Ок");
+            DisplayAlert("Комментарий от клиента", comment, "Ок");
         }
         private void Profile_Clicked(object sender, EventArgs e)
         {
